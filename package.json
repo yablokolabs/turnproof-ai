@@ -1,0 +1,42 @@
+{
+  "name": "turnproof-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "TurnProof AI - Recover the turnaround. Show the evidence. Advisory, synthetic-data prototype.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:api": "tsx apps/api/src/server.ts",
+    "dev:web": "vite --config apps/web/vite.config.ts",
+    "seed": "tsx scripts/seed.ts",
+    "build:web": "vite build --config apps/web/vite.config.ts",
+    "start": "tsx apps/api/src/server.ts",
+    "e2e:serve": "npm run build:web && tsx apps/api/src/server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "fixtures:build": "tsx scripts/build-fixtures.ts && tsx scripts/generate-scenarios.ts",
+    "evaluate": "tsx scripts/evaluate.ts",
+    "proof:export": "tsx scripts/proof-export.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}

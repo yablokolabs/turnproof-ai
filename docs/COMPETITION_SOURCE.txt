@@ -1,0 +1,390 @@
+HTCJ × PROOF Aviation Futures Challenge
+Build the Future of Flight. Then Prove It.
+Start late project
+
+Edit project
+Create project
+Vote on projects
+Import from portfolio
+Who can participate
+Above legal age of majority in country of residence
+All countries/territories, excluding standard exceptions 
+View full rules
+16 days to deadline
+View schedule
+
+Deadline
+
+Oct 28, 2026 @ 12:00am GMT+0 
+Boston Venture Week
+Public
+3 non-cash prizes	107 participants
+hacktheconcretejungle
+Enterprise Machine Learning/AI Social Good
+About the challenge
+Main Description
+DON’T PITCH THE FUTURE. PROVE IT.
+
+PROOF Aviation Futures™, powered by Hack the Concrete Jungle (HTCJ), is an innovation challenge for founders, engineers, students, researchers, entrepreneurs, and multidisciplinary teams building the next generation of aviation, aerospace, and mobility technology.
+
+We’re looking for more than ideas. We want to see what you can build, demonstrate, validate, and move toward real-world application.
+
+The challenge invites teams to tackle opportunities across artificial intelligence, intelligent flight systems, aerospace, advanced air mobility (AAM/eVTOL), drones and UAS, autonomous systems, airport technology, cybersecurity and dual-use technology, cargo and logistics, passenger experience and accessibility, aviation workforce development, and aviation entrepreneurship.
+
+From Problem to PROOF
+The challenge follows a simple model:
+
+PROBLEM → BUILD → SUBMIT → REVIEW → PROVE → MATCH → PILOT-READY
+
+THE ROAD TO OCTOBER 25 — PROOF BOSTON ONE-DAY FLAGSHIP
+
+This challenge feeds the PROOF Boston™ one-day flagship: Sunday, October 25, 2026, in Boston, MA.
+
+October 25 is not a build day. Build now — choose a problem, build your solution, document your evidence. Evidence lock: October 23. Top teams prove it LIVE in Boston: tested and challenged by problem owners, demonstrated on stage, connected to investors and corporate partners in deal rooms, and converted into pilots and next actions.
+
+Challenge Intake → Team/Problem Matching → Pre-Event Build → Evidence → Oct 25 PROOF Day → Validation → Deal Room → Pilot/Capital/Partnership → Follow-through
+
+RSVP for the Boston flagship: luma.com/ctwex9eq
+
+Participants should be prepared to answer:
+
+What problem are you solving?
+Who experiences that problem?
+What have you built?
+How does the technology work?
+Who could use or buy it?
+Can you demonstrate it?
+What would it take to test it in a real environment?
+
+Challenge Areas
+Projects may address:
+
+AI + Flight Intelligence — predictive systems, AI copilots, decision support, operational intelligence, telemetry, maintenance, and safety.
+
+Autonomy + Advanced Air Mobility — eVTOL, drones, autonomous flight, UAS operations, routing, fleet systems, and emerging mobility.
+
+Airport + Aviation Infrastructure — smart airports, ground operations, charging, energy, logistics, baggage, cargo, facilities, and infrastructure.
+
+Cybersecurity + Dual-Use Technology — aircraft and airport cybersecurity, resilient communications, data protection, trusted AI, and technologies with commercial and public-sector applications.
+
+Passenger Experience + Accessibility — travel technology, accessibility, wayfinding, customer experience, connected journeys, and inclusive aviation.
+
+Workforce + Aviation Business — training, maintenance, operations, education, entrepreneurship, aviation services, local suppliers, and future-of-work solutions.
+
+Beyond the Challenge
+For HTCJ, submission is not necessarily the end of the process.
+
+Selected projects may be considered for continued opportunities within the HTCJ and PROOF ecosystem, including founder assessment, technology showcases, mentor engagement, business and industry introductions, corporate challenge matching, commercialization support, and pilot-readiness evaluation.
+
+The objective is to identify technologies and founders capable of moving from an innovation challenge toward something that can be demonstrated, evaluated, and potentially deployed in the real world.
+
+HACK → INCUBATE → DEPLOY
+
+Who Should Participate?
+We welcome:
+
+Founders • Developers • Engineers • Designers • Researchers • Students • Aviation Professionals • Entrepreneurs • Product Builders • AI Teams • Hardware Teams • Robotics Teams • Aerospace Teams • Multidisciplinary Teams
+
+You do not need to be an aviation industry veteran. If your technology can solve a meaningful aviation problem, we want to see what you can build.
+
+What Are We Looking For?
+Strong submissions should demonstrate:
+
+REAL PROBLEM. A clearly defined aviation or aerospace need.
+
+REAL SOLUTION. Technology or a business solution capable of addressing it.
+
+REAL PROOF. A prototype, product, demonstration, technical architecture, working model, or other credible evidence.
+
+REAL USER. A clear understanding of who needs the solution.
+
+REAL PATHWAY. A reasonable next step toward testing, validation, commercialization, or deployment.
+
+Build the Future of Flight
+The future of aviation will not be created by one company, one airport, or one technology.
+
+It will be built by people willing to solve difficult problems—and prove their solutions can work.
+
+BUILD THE FUTURE OF FLIGHT.
+
+THEN PROVE IT.
+
+PROOF AVIATION FUTURES™
+Powered by Hack the Concrete Jungle
+
+Participation or selection does not guarantee incubation, investment, funding, procurement, partnership, pilot participation, or any commercial agreement.
+
+ 
+
+Get started
+Get Started
+READY TO BUILD THE FUTURE OF FLIGHT?
+
+PROOF Aviation Futures™ is built for people ready to move beyond ideas and show what their technology can actually do.
+
+Whether you’re a founder, engineer, developer, researcher, student, designer, aviation professional, or multidisciplinary team, this is your opportunity to identify a real aviation problem, build a solution, and prove it.
+
+HOW TO GET STARTED
+
+1. CHOOSE A PROBLEM
+Identify a meaningful challenge across aviation, aerospace, AI, autonomy, airports, cybersecurity, passenger experience, infrastructure, logistics, workforce, or advanced air mobility.
+
+2. BUILD YOUR SOLUTION
+Create a prototype, application, AI system, hardware concept, platform, technical architecture, business solution, or working demonstration.
+
+3. CREATE YOUR TEAM
+Participate individually or bring together the technical, business, design, aviation, and industry expertise needed to strengthen your solution.
+
+4. SUBMIT YOUR PROOF
+Show us the problem, your solution, how it works, who needs it, what you built, and what you need to move forward.
+
+5. GET REVIEWED
+Submissions will be evaluated for problem relevance, innovation, technical execution, usability, business potential, demonstration readiness, and pathway toward real-world application.
+
+6. KEEP BUILDING
+Selected projects may be considered for continued opportunities through the HTCJ and PROOF ecosystem, including showcases, founder development, mentor engagement, technology matching, industry introductions, commercialization support, and pilot-readiness evaluation.
+
+What You’ll Need
+Be prepared to submit your project name, team information, problem statement, solution, technology used, target customer/user, project stage, written description, images or screenshots, demonstration/video where available, and links to your working product, prototype, repository, or supporting materials.
+
+Start With What You Have
+ 
+
+You do not need a fully developed company or finished commercial product to participate.
+
+You do need a clear problem, a credible solution, and enough evidence for reviewers to understand what you built and why it matters.
+
+DON’T PITCH THE FUTURE. PROVE IT.
+
+PROBLEM → BUILD → SUBMIT → REVIEW → PROVE → MATCH → PILOT-READY
+
+START BUILDING. SUBMIT YOUR PROOF.
+
+ 
+
+ 
+
+CONNECT WITH HTCJ
+Website: hacktheconcretejungle.com
+Email: info@hacktheconcretejungle.com
+Boston flagship RSVP: luma.com/ctwex9eq
+In partnership with Prepare 4VC and Startup Grind Boston
+Requirements
+What to Build
+What to Build
+BUILD SOMETHING AVIATION CAN ACTUALLY USE.
+
+PROOF Aviation Futures™ is open to software, AI, hardware, robotics, platforms, infrastructure concepts, workforce solutions, and new aviation businesses.
+
+Your project should start with a real problem and demonstrate a credible solution.
+
+You can build in any of these areas:
+
+AI + FLIGHT INTELLIGENCE
+AI copilots, predictive maintenance, flight planning, operational intelligence, computer vision, safety systems, weather intelligence, decision-support tools, aviation agents, and intelligent airport operations.
+
+AUTONOMY + ADVANCED AIR MOBILITY
+Drones, UAS platforms, eVTOL systems, autonomous operations, fleet management, airspace coordination, navigation, vertiport technology, ground-control systems, and advanced mobility applications.
+
+AIRPORT + GROUND OPERATIONS
+Smart-airport technology, baggage systems, turnaround optimization, ramp operations, aircraft servicing, ground equipment, airport logistics, charging systems, facility management, and passenger-flow technology.
+
+CYBERSECURITY + DUAL-USE
+Aircraft cybersecurity, airport infrastructure security, communications, identity, threat detection, trusted AI, resilient networks, drone security, and technologies that may have both commercial and public-sector applications.
+
+PASSENGER EXPERIENCE + ACCESSIBILITY
+Wayfinding, accessibility tools, multilingual travel assistants, sensory-support systems, baggage tracking, disruption management, personalized travel, customer-service AI, and connected passenger experiences.
+
+CARGO + AVIATION LOGISTICS
+Air cargo marketplaces, autonomous delivery, warehouse technology, routing, last-mile systems, cold-chain monitoring, shipment visibility, predictive logistics, and cargo automation.
+
+AVIATION WORKFORCE + EDUCATION
+Pilot and technician training, AR/VR simulation, AI tutors, maintenance education, credentialing, workforce matching, career discovery, apprenticeship platforms, and tools that make aviation careers more accessible.
+
+AVIATION BUSINESS + ENTREPRENEURSHIP
+You can also build the business, not just the technology: aircraft services, cleaning and detailing, maintenance-support businesses, drone services, airport vendors, logistics companies, aviation marketplaces, ground services, local supplier platforms, and other scalable aviation services.
+
+Need an Idea?
+Start with one of these:
+
+AI Aircraft Maintenance Copilot — diagnose maintenance issues and organize technical information.
+
+Airport Operations Agent — help operations teams manage gates, crews, equipment and disruptions.
+
+Drone Fleet Command Center — manage missions, aircraft, batteries, maintenance and compliance.
+
+Accessible Airport Navigator — personalized airport navigation for travelers with mobility, visual, hearing or sensory needs.
+
+Aviation Cyber Monitor — detect unusual activity across connected aviation systems.
+
+Smart Baggage Platform — improve baggage visibility and predict potential mishandling.
+
+Air Cargo Optimizer — match unused cargo capacity with shipments and optimize routing.
+
+eVTOL Operations Platform — manage scheduling, charging, fleet availability and vertiport operations.
+
+Aviation Skills Copilot — train people for maintenance, operations, drone and emerging aviation careers.
+
+Aircraft Service Marketplace — connect aircraft owners/operators with qualified cleaning, maintenance-support and ground-service providers.
+
+Airport Small-Business Marketplace — connect airports and aviation companies with qualified local suppliers.
+
+Flight Disruption Assistant — help passengers and operators respond to delays, cancellations and missed connections.
+
+The PROOF Test
+Before submitting, ask:
+
+Is the problem real?
+Who has this problem?
+What did we build?
+Can we demonstrate it?
+Who could use or buy it?
+What would a real-world test look like?
+
+You do not need to build an aircraft.
+
+You can build the software, infrastructure, service, business, workforce system, AI, marketplace, or technology that makes the aviation ecosystem work better.
+
+DON’T JUST DESIGN THE FUTURE OF FLIGHT.
+
+BUILD SOMETHING THAT CAN PROVE IT BELONGS THERE.
+
+ 
+
+What to Submit
+What to Submit
+SHOW US THE PROOF.
+
+Your submission should make it easy for reviewers to understand the problem, what you built, how it works, who needs it, and what happens next.
+
+Your PROOF Aviation Futures™ submission should include:
+
+1. PROJECT NAME
+Give your solution a clear, memorable name.
+
+2. THE PROBLEM
+What aviation, aerospace, airport, mobility, workforce, logistics, safety, or passenger problem are you solving? Who experiences it, and why does it matter?
+
+3. YOUR SOLUTION
+Explain what you built and how it addresses the problem.
+
+4. YOUR PROOF
+Show evidence that the solution exists. This may include a working prototype, application, AI model, hardware prototype, simulation, technical architecture, dashboard, platform, service workflow, business model, or other demonstrable solution.
+
+5. DEMO
+Whenever possible, include a short video demonstrating your project. Show the product working rather than only describing it.
+
+6. IMAGES / SCREENSHOTS
+Include clear visuals of your product, interface, hardware, prototype, diagrams, system architecture, or user experience.
+
+7. TECHNOLOGY USED
+Tell us what you built with: AI models, APIs, programming languages, cloud infrastructure, hardware, sensors, robotics, datasets, aviation systems, development platforms, or other technologies.
+
+8. TARGET USER / CUSTOMER
+Who would actually use or purchase this solution?
+
+Examples include airlines, airports, aircraft operators, pilots, maintenance organizations, cargo companies, drone operators, travelers, government agencies, aviation businesses, schools, manufacturers, or aviation workers.
+
+9. CURRENT STAGE
+Tell us where the project stands:
+
+Concept → Prototype → MVP → Demo Ready → Pilot Ready → Commercial
+
+10. BUSINESS / DEPLOYMENT CASE
+Explain how your solution could eventually be tested, deployed, purchased, licensed, integrated, or operated.
+
+11. WHAT YOU NEED NEXT
+Tell HTCJ what could move the project forward:
+
+Customers • Pilot Partner • Technical Support • Aviation Expertise • Mentors • Data • Infrastructure • Corporate Partner • Capital Readiness • Workforce • Commercialization Support
+
+12. TEAM
+Introduce the people behind the project and the skills each team member brings.
+
+Required Submission Materials
+At minimum, submit:
+
+Project description + problem statement + solution + project stage + team information + supporting visual(s).
+
+Whenever available, also include:
+
+Demo video • Live product link • Prototype • GitHub/repository • Pitch deck • Technical documentation • Architecture diagram • Research • Business model
+
+Your Submission Should Answer One Question
+WHAT CAN YOU PROVE?
+
+We are not evaluating who can write the biggest pitch.
+
+We want to understand:
+
+WHAT DID YOU BUILD?
+DOES IT SOLVE A REAL PROBLEM?
+CAN WE SEE IT WORK?
+WHO NEEDS IT?
+WHAT WOULD IT TAKE TO TEST IT IN THE REAL WORLD?
+
+BUILD IT. SHOW IT. PROVE IT.
+
+PROOF AVIATION FUTURES™
+Powered by Hack the Concrete Jungle
+
+ 
+
+Prizes
+3 non-cash prizes
+Best Advanced Air Mobility Innovation
+1 winner
+Recognizing breakthroughs in drones, eVTOL, autonomous systems, and future transportation technologies.
+
+Best Use of Anakin
+1 winner
+Awarded to the submission that makes the best use of Anakin's web-interaction API / MCP. The winning team receives a $79/month Anakin plan plus office hours with Anakin's team.
+
+Best Use of Jev in Aviation
+1 winner
+Awarded to the project with the strongest use of Jev, TypeSafe AI's System One decision model, for fast structured decision-making in an aviation build (routing, safety checks, scoring).
+
+Devpost Achievements
+Submitting to this hackathon could earn you:
+
+
+First in-person hackathon
+
+X Hackathons
+ level 4
+
+Hackathon Winner
+ level 1
+
+Dual Boot
+
+Dual Boot Winner
+Judges
+jr horsting
+jr horsting
+
+Nova Hall
+Nova Hall
+flyingovertime.org
+
+Prathusha Prakash
+Prathusha Prakash
+TikTok
+
+Alyze Sam
+Alyze Sam
+Community Admin, HTCJ / Ethical AI
+
+Judging Criteria
+1. Problem Relevance — 20%
+How clearly does the project define and address a meaningful aviation, aerospace, mobility, airport, logistics, safety, workforce, or passenger problem?
+2. Innovation + Differentiation — 15%
+How original is the solution? Judges consider creative technology use, differentiation from existing approaches, and whether it provides a meaningful improvement.
+3. Technical Execution — 20%
+How well is the solution built? Judges consider functionality, engineering quality, AI/ML or hardware implementation, integrations, usability, and technical feasibility.
+4. PROOF / Demonstration — 20%
+Does the team provide credible proof that the solution works through a prototype, MVP, demo, simulation, test results, model output, research, or other working evidence?
+5. Pilot Readiness + Feasibility — 15%
+Could the solution realistically be tested or deployed? Judges consider operational practicality, safety, regulatory awareness, integration needs, scalability, and next steps.
+6. Impact + Commercial Potential — 10%
+What could the solution change if implemented? Consider safety, efficiency, accessibility, sustainability, workforce impact, customer value, scalability, and commercial potential.

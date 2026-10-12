@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "gen-disrupted-20",
+  "label": "Disrupted 20: TANKER-1 delayed 10 min; alternate TANKER-2 committed for the whole window",
+  "category": "disrupted",
+  "dataProvenance": "Fully synthetic generated fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "turnaround": {
+    "id": "TO-GEN-20",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-320",
+    "aircraft": "SYN-A320",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-GEN-20",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-GEN-20",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-GEN-20",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-GEN-20",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-disrupted-20-t1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-disrupted-20-t2"
+      ],
+      "reservations": [
+        {
+          "from": "2026-10-12T09:00:00Z",
+          "to": "2026-10-12T11:00:00Z",
+          "label": "Committed for the whole window to synthetic turnaround TP-118"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-gen-disrupted-20-t1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Fuel unit TANKER-1 reports it cannot reach stand until 2026-10-12T09:20:00Z for TO-GEN-20.",
+      "contentHash": "8616588953e231d98b7342e81ae5ffb750b59e5d0ebdd62bf6438ee485e194c9",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-gen-disrupted-20-t2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Alternate fuel unit TANKER-2 reports availability for TO-GEN-20.",
+      "contentHash": "941c313d4084622eac5aac41047d34d5e28d4c75c5181be0f4408c03e7fd1985",
+      "trust": "fixture"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-gen-disrupted-20-fuel-delay",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:05:00Z",
+      "ingestedAt": "2026-10-12T09:06:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-1",
+      "field": "availableFrom",
+      "value": "2026-10-12T09:20:00Z",
+      "evidenceId": "ev-gen-disrupted-20-t1",
+      "sourceLabel": "Synthetic board feed"
+    },
+    {
+      "id": "evt-gen-disrupted-20-alt-until",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:05:00Z",
+      "ingestedAt": "2026-10-12T09:06:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-2",
+      "field": "availableUntil",
+      "value": "2026-10-12T09:15:00Z",
+      "evidenceId": "ev-gen-disrupted-20-t2",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "policyId": "policy-default"
+}

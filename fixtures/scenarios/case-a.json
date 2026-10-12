@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "case-a",
+  "label": "Case A - fueling delay blocks boarding; alternate tanker shortens the delay",
+  "category": "disrupted",
+  "dataProvenance": "Fully synthetic fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "policyId": "policy-default",
+  "turnaround": {
+    "id": "TO-TP101-A",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-101",
+    "aircraft": "SYN-A320",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-TP101-A",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-TP101-A",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-TP101-A",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-TP101-A",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-a-tanker1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:15:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-a-tanker2"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-3",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T09:20:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-a-tanker3"
+      ],
+      "reservations": [
+        {
+          "from": "2026-10-12T09:00:00Z",
+          "to": "2026-10-12T09:20:00Z",
+          "label": "Committed to synthetic turnaround TP-118"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-a-tanker1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "content": "Fuel unit TANKER-1 reports it cannot reach stand until 09:30Z; boarding cannot start before fueling completes.",
+      "contentHash": "19c0fc3522cc523668797682dfde379060a3b6d04743a7ea3dfc9454933ebadc",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-a-tanker2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:14:00Z",
+      "ingestedAt": "2026-10-12T09:14:00Z",
+      "content": "Alternate fuel unit TANKER-2 reports availability from 09:15Z for synthetic turnaround TP-101.",
+      "contentHash": "575b0aef8bd83a72540470c8c777d355b30715a14c6e9941f4f4765ef676b412",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-a-tanker3",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:10:00Z",
+      "ingestedAt": "2026-10-12T09:10:00Z",
+      "content": "TANKER-3 is committed to synthetic turnaround TP-118 until 09:20Z.",
+      "contentHash": "4abe4b0e9461a07b6ce6a24cdaba30453740910dd7faef013d1bf6ebef6bfd8d",
+      "trust": "fixture"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-a-fuel-delay",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-1",
+      "field": "availableFrom",
+      "value": "2026-10-12T09:30:00Z",
+      "evidenceId": "ev-a-tanker1",
+      "sourceLabel": "Synthetic board feed"
+    },
+    {
+      "id": "evt-a-tanker2-available",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:14:00Z",
+      "ingestedAt": "2026-10-12T09:14:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-2",
+      "field": "availableFrom",
+      "value": "2026-10-12T09:15:00Z",
+      "evidenceId": "ev-a-tanker2",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "expected": {
+    "state": "recommended",
+    "baselineDelayMin": 20,
+    "candidateDelayMin": 5,
+    "projectedRecoveryMin": 15,
+    "recommendedAction": "use_alternate_resource",
+    "rejectedReasonCodes": [
+      "RESOURCE_RESERVED"
+    ],
+    "derivedBy": "Hand-derived from the synthetic task durations 10/20/15/5 min, planned start 09:00Z and planned ready 09:50Z. Not a measured real-world saving."
+  }
+}

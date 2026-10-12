@@ -1,0 +1,21 @@
+{
+  "id": "policy-default",
+  "version": "fixture-policy-1.0.0",
+  "freshnessBudgetMinutes": {
+    "availability": 5,
+    "completion": 15
+  },
+  "taskDurationBounds": {
+    "inspection": { "min": 1, "max": 120 },
+    "fueling": { "min": 1, "max": 120 },
+    "boarding": { "min": 1, "max": 120 },
+    "ready": { "min": 0, "max": 30 }
+  },
+  "costUnits": {
+    "wait": 0,
+    "use_alternate_resource": 12,
+    "resequencing": 8
+  },
+  "maxRequestBytes": 65536,
+  "note": "Synthetic fixture policy authored for this prototype. Durations, cost units, and the 5-minute availability freshness budget are invented for the demo and are NOT aviation standards or operational limits."
+}

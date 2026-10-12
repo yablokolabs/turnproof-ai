@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+proof/local/
+apps/api/data/
+apps/web/dist/
+test-results/
+playwright-report/
+.DS_Store

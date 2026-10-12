@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "case-b-wait",
+  "label": "Case B variant - alternate tanker is committed, so waiting is retained with zero recovery",
+  "category": "disrupted",
+  "dataProvenance": "Fully synthetic fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "policyId": "policy-default",
+  "turnaround": {
+    "id": "TO-TP303-C",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-303",
+    "aircraft": "SYN-B738",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-TP303-C",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-TP303-C",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-TP303-C",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-TP303-C",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-c-tanker1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T09:15:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-c-tanker2"
+      ],
+      "reservations": [
+        {
+          "from": "2026-10-12T09:00:00Z",
+          "to": "2026-10-12T09:20:00Z",
+          "label": "Committed to synthetic turnaround TP-118"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-c-tanker1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "content": "Fuel unit TANKER-1 reports it cannot reach stand until 09:30Z.",
+      "contentHash": "1a009b2c612595e19de499f109b5e1542f21f7424bc6498985de0a953b31fb13",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-c-tanker2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:14:00Z",
+      "ingestedAt": "2026-10-12T09:14:00Z",
+      "content": "TANKER-2 is committed to synthetic turnaround TP-118 until 09:20Z and cannot be released.",
+      "contentHash": "965c4e2562d8147495c99eab460d0b405889f7d513da506270a4f30f3747fbb8",
+      "trust": "fixture"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-c-fuel-delay",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-1",
+      "field": "availableFrom",
+      "value": "2026-10-12T09:30:00Z",
+      "evidenceId": "ev-c-tanker1",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "expected": {
+    "state": "recommended",
+    "baselineDelayMin": 20,
+    "candidateDelayMin": 20,
+    "projectedRecoveryMin": 0,
+    "recommendedAction": "wait",
+    "rejectedReasonCodes": [
+      "RESOURCE_RESERVED"
+    ],
+    "derivedBy": "Hand-derived: with the alternate trapped by an existing commitment, the only feasible candidate is to retain the plan, so projected recovery is zero."
+  }
+}

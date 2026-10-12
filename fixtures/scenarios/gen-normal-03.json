@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "gen-normal-03",
+  "label": "Normal 3: nominal turnaround, no blocking updates",
+  "category": "normal",
+  "dataProvenance": "Fully synthetic generated fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "turnaround": {
+    "id": "TO-GEN-3",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-303",
+    "aircraft": "SYN-A320",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-GEN-3",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-GEN-3",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-GEN-3",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-GEN-3",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-normal-03-t1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-normal-03-t2"
+      ],
+      "reservations": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-gen-normal-03-t1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Fuel unit TANKER-1 confirms availability from 09:00Z for TO-GEN-3.",
+      "contentHash": "d39243be9b63a1c4889ccd671f06f378746a88391cfca12e0a645a8d1f2e3284",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-gen-normal-03-t2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Alternate fuel unit TANKER-2 confirms availability from 09:00Z for TO-GEN-3.",
+      "contentHash": "ec0fa08f8e12756474166d09d1a9255d022bf6b1ee7fd1d8daba7a8a4547bfa9",
+      "trust": "fixture"
+    }
+  ],
+  "events": [],
+  "policyId": "policy-default"
+}

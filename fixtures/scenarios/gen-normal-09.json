@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "gen-normal-09",
+  "label": "Normal 9: revised start stays inside the plan, no blocking update",
+  "category": "normal",
+  "dataProvenance": "Fully synthetic generated fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "turnaround": {
+    "id": "TO-GEN-9",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-309",
+    "aircraft": "SYN-A320",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-GEN-9",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-GEN-9",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-GEN-9",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-GEN-9",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-normal-09-t1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-normal-09-t2"
+      ],
+      "reservations": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-gen-normal-09-t1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Fuel unit TANKER-1 confirms availability from 09:00Z for TO-GEN-9.",
+      "contentHash": "7a54ee2dc4307494add22236b4b03c3e963aef25273e69a4385a9ca99687afa0",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-gen-normal-09-t2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Alternate fuel unit TANKER-2 confirms availability from 09:00Z for TO-GEN-9.",
+      "contentHash": "bdb22515a9848192c49a5eb0049ca03a001ca947df4733688364f4ada2ba33f1",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-gen-normal-09-x1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "TO-GEN-9 inspection is confirmed to start no later than 08:55Z.",
+      "contentHash": "96c9efbee61cea36db015eabfcfa9ea64a02b65fb9ce349a568c457735bb9a1e",
+      "trust": "fixture"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-gen-normal-09-x1",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:05:00Z",
+      "ingestedAt": "2026-10-12T09:06:00Z",
+      "kind": "task_delay",
+      "targetId": "t-inspect",
+      "field": "earliestStart",
+      "value": "2026-10-12T08:55:00Z",
+      "evidenceId": "ev-gen-normal-09-x1",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "policyId": "policy-default"
+}

@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "gen-adverse-23",
+  "label": "Adverse 23: assigned fuel unit unavailable, feasible alternate available",
+  "category": "adverse",
+  "dataProvenance": "Fully synthetic generated fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+  "turnaround": {
+    "id": "TO-GEN-23",
+    "station": "SYN-Station-Alpha",
+    "flightNumber": "TP-323",
+    "aircraft": "SYN-A320",
+    "plannedStartAt": "2026-10-12T09:00:00Z",
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "revision": 1
+  },
+  "tasks": [
+    {
+      "id": "t-inspect",
+      "turnaroundId": "TO-GEN-23",
+      "kind": "inspection",
+      "predecessors": [],
+      "plannedStart": "2026-10-12T09:00:00Z",
+      "durationMin": 10,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-fuel",
+      "turnaroundId": "TO-GEN-23",
+      "kind": "fueling",
+      "predecessors": [
+        "t-inspect"
+      ],
+      "plannedStart": "2026-10-12T09:10:00Z",
+      "durationMin": 20,
+      "status": "pending",
+      "resourceId": "TANKER-1",
+      "resourceKind": "fuel_truck",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-board",
+      "turnaroundId": "TO-GEN-23",
+      "kind": "boarding",
+      "predecessors": [
+        "t-fuel"
+      ],
+      "plannedStart": "2026-10-12T09:30:00Z",
+      "durationMin": 15,
+      "status": "pending",
+      "evidenceIds": []
+    },
+    {
+      "id": "t-ready",
+      "turnaroundId": "TO-GEN-23",
+      "kind": "ready",
+      "predecessors": [
+        "t-board"
+      ],
+      "plannedStart": "2026-10-12T09:45:00Z",
+      "durationMin": 5,
+      "status": "pending",
+      "evidenceIds": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "TANKER-1",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T09:20:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-adverse-23-t1"
+      ],
+      "reservations": []
+    },
+    {
+      "id": "TANKER-2",
+      "kind": "fuel_truck",
+      "availableFrom": "2026-10-12T09:00:00Z",
+      "availableUntil": "2026-10-12T11:00:00Z",
+      "unavailable": false,
+      "authorization": "fixture",
+      "evidenceIds": [
+        "ev-gen-adverse-23-t2"
+      ],
+      "reservations": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-gen-adverse-23-t1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Fuel unit TANKER-1 reports an unserviceable pump and is unavailable for TO-GEN-23.",
+      "contentHash": "40e7fb166c84c9adf8ce4a42f380f5fe13f28d383a6f89a21c98f77daf155055",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-gen-adverse-23-t2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:04:00Z",
+      "ingestedAt": "2026-10-12T09:05:00Z",
+      "content": "Alternate fuel unit TANKER-2 reports availability from 09:10Z for TO-GEN-23.",
+      "contentHash": "eb8f654530026977a50469c0a7595ffb4f74377319d588dc151f345e24d047a4",
+      "trust": "fixture"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-gen-adverse-23-t1-unavailable",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:05:00Z",
+      "ingestedAt": "2026-10-12T09:06:00Z",
+      "kind": "resource_unavailable",
+      "targetId": "TANKER-1",
+      "field": "unavailable",
+      "value": true,
+      "evidenceId": "ev-gen-adverse-23-t1",
+      "sourceLabel": "Synthetic board feed"
+    },
+    {
+      "id": "evt-gen-adverse-23-t2-available",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:05:00Z",
+      "ingestedAt": "2026-10-12T09:06:00Z",
+      "kind": "resource_available",
+      "targetId": "TANKER-2",
+      "field": "availableFrom",
+      "value": "2026-10-12T09:10:00Z",
+      "evidenceId": "ev-gen-adverse-23-t2",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "policyId": "policy-default"
+}
