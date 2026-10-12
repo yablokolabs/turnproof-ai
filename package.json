@@ -26,6 +26,7 @@
     "fixtures:build": "tsx scripts/build-fixtures.ts && tsx scripts/generate-scenarios.ts",
     "evaluate": "tsx scripts/evaluate.ts",
     "proof:export": "tsx scripts/proof-export.ts",
+    "proof:zip": "tsx scripts/proof-zip.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {
