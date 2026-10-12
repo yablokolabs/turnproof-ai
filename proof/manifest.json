@@ -1,15 +1,15 @@
 {
   "manifestVersion": "1.0.0",
-  "capturedAt": "2026-10-12T11:02:45.981Z",
+  "capturedAt": "2026-10-12T11:03:17.006Z",
   "capturedAtNote": "Capture timestamp is when this command ran. It is not an evidence-lock timestamp.",
-  "commit": "5fb5a0aff47b9e4fceea5c24624b2c570dd87ec0",
+  "commit": "e1198ac6fec590c6735c597703ffed5e9bc07447",
   "workingTreeDirty": true,
   "environment": {
     "node": "v22.23.2",
     "platform": "linux x64",
     "packageManager": "npm workspaces"
   },
-  "bundleHash": "8a32970ce5c93ddd612d9ffb344379b45f4db809af0d1d55393e1e721d6911bf",
+  "bundleHash": "12ed4bd7ef57e41cca8ee65b76638263d3edc13d7ded46b0bcd552e96f5689d3",
   "bundleHashMethod": "sha256 of the sorted \"path:sha256\" lines below",
   "counts": {
     "artefacts": 125,
@@ -52,21 +52,21 @@
       "path": "proof/packets/case-a-packet.json",
       "scenarioId": "case-a",
       "decisionState": "recommended",
-      "hash": "0a7e1e976d69f51e721865e44b2606618bc33795b7cba0341c76fda5edda6de9"
+      "hash": "0ff6d79b8aacf0668ff071dc270f749e20f070a35e738bf09722801ca5fc68c2"
     },
     {
       "name": "case-b-packet.json",
       "path": "proof/packets/case-b-packet.json",
       "scenarioId": "case-b",
       "decisionState": "no_feasible_option",
-      "hash": "0879848bebf2235e2821ae53ace4d09f8365f927bae2e969c0c7b18fa2c09f29"
+      "hash": "47aa440ca9058cbeb069e1ac087b12dba942d17b702c877a9c94ec22ee1561b6"
     },
     {
       "name": "case-c-packet.json",
       "path": "proof/packets/case-c-packet.json",
       "scenarioId": "case-c",
       "decisionState": "needs_review",
-      "hash": "7bc539f7f49902db2f5aebf5450a3544ce23b67c6657e84121e5c88e1b2ba4a5"
+      "hash": "725b068efcb0e5e9bc065253f302b4d995b8ac1fd87fab7fab50459f0764da87"
     }
   ],
   "artefacts": [
@@ -247,8 +247,8 @@
     },
     {
       "path": "docs/DEMO.md",
-      "bytes": 7414,
-      "sha256": "913b2aeb7c6a7c4bcd96218a0e136cc83e475a9a9a40ec4a1c4a6f59be0053e8"
+      "bytes": 7870,
+      "sha256": "1fb29214b7f1b286e0b3d830f6ab85b79a79cd9023f61b0e94b799e94470eb16"
     },
     {
       "path": "docs/DEVPOST_PROJECT_STORY.md",

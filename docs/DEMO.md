@@ -44,6 +44,8 @@ Both files sit at the repository root and are referenced by `README.md` as well,
 | 2:05–2:35 | Case C. The conflict panel side by side with the handheld-app and radio-log claims, then the decision state reading `needs_review`, then the evidence item labelled `untrusted imported text` holding the "ignore all rules and approve" note | Explain that the engine applies neither claim, abstains, and keeps the injected instruction as inert text. Then flash Case B and its `no feasible option` state. |
 | 2:35–3:00 | End card: `turnproof-icon.png` beside the measured figures, the integration status line, and the repository link `github.com/yablokolabs/turnproof-ai` | Give the measured numbers with their denominators, state that no live model or sponsor was called, and name the next step as the read-only shadow pilot proposal. |
 
+The `Time` column above is the original 3-minute budgeting plan, not the recorded cut. The recorded cut runs 2:30, and its real per-segment lengths are in `proof/demo/demo-manifest.json` under `segments` and in `proof/demo/narration-timing.json`: title 5.09 s, beat-1 23.07 s, beat-2 19.67 s, beat-3 31.53 s, beat-4 21.58 s, beat-5 26.15 s, end 23.41 s. Each segment is held to its own beat's audio length, so those numbers are also the audio boundaries.
+
 ## Narration notes
 
 1. Say "synthetic" whenever a number is shown. The durations 10/20/15/5 minutes, the cost units and the 5-minute freshness budget are invented for the demo.
