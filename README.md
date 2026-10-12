@@ -6,7 +6,9 @@ An evidence-backed turnaround recovery assistant for one station and one disrupt
 
 **Prototype — synthetic data — advisory only — no operational execution.**
 
-**Status: working offline prototype.** Measured results exist and are committed under `proof/`. What does not exist: any live model provider integration, any sponsor integration, any pilot, any partner, any customer, any interview, and any recorded demo video. There is no public repository URL yet; it will be added here once it exists.
+**Repository:** <https://github.com/yablokolabs/turnproof-ai> (public, pushed 2026-10-12).
+
+**Status: working offline prototype.** Measured results exist and are committed under `proof/`. What does not exist: any live model provider integration, any sponsor integration, any pilot, any partner, any customer, any interview, and any recorded demo video.
 
 ## What works today
 

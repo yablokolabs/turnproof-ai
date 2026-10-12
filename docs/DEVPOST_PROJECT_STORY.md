@@ -34,7 +34,7 @@ Measured over those 34 fixtures: 27 recommended, 3 abstained on contradictory ev
 
 Integration status is reported as it is. The deterministic provider is implemented and available. Replay is implemented from stored decisions in local SQLite and is always labelled as a replay. The live AI provider is unimplemented and reports itself unavailable, so there is no rule-only versus live-AI comparison to report. Anakin and Jev are unavailable: no contract was verified and no call was made, so neither is claimed as used.
 
-The repository link and the demo video link will be added only once they exist. Neither has been published yet.
+The repository is public at <https://github.com/yablokolabs/turnproof-ai>. The demo video link will be added only once the recording exists; it has not been recorded yet.
 
 # Challenges we ran into
 

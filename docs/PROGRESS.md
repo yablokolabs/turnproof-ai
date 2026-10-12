@@ -119,3 +119,15 @@ Dirty files at checkpoint time: `proof/manifest.json`, `proof/packets/*.json`, `
 Integration status: deterministic available; replay available and labelled; live AI, Anakin and Jev unavailable, none called.
 Failures: none in this step.
 One exact next action: commit the proof outputs, update the handoff, and publish the repository publicly with `gh repo create yablokolabs/turnproof-ai --public --source=. --push`.
+
+## C7 — Repository published publicly
+
+Checkpoint ID / timestamp with timezone: C7, 2026-10-12.
+Milestone / branch / commit: M5 publication, branch `main`, commit `e2913dbe75ee485e39fc4508b8d18ba0b1d3448c`.
+Implemented behavior: created the public GitHub repository and pushed the two commits, then pointed the documentation at the real URL.
+Checks: `gh repo create yablokolabs/turnproof-ai --public --source=. --push` → exit 0, reported `https://github.com/yablokolabs/turnproof-ai` and `[new branch] HEAD -> main`. `git ls-remote --heads origin` → `refs/heads/main` at `e2913db`. `gh repo view yablokolabs/turnproof-ai --json ...` → `visibility: PUBLIC`, `defaultBranchRef: main`, `licenseInfo: null` (no license file is present, so the repository is public but not open-source licensed).
+Result: `README.md` and `docs/DEVPOST_PROJECT_STORY.md` now name the public repository. `docs/DEMO.md` places the same URL on the video end card.
+Integration status: unchanged. Deterministic available; replay available and labelled; live AI, Anakin and Jev unavailable, none called.
+Failures: none. Note: the local branch was created as `master` and is now `main`, tracking `origin/main`.
+Unresolved assumptions: no demo video exists, so no video link may be claimed. No sponsor documentation was retrieved, so no sponsor capability may be claimed. Push authorization was given explicitly by the user on October 12, 2026; no further publishing, deployment or submission has been authorized.
+One exact next action: record the three-minute demo video from `docs/DEMO.md`, then add its real link to `README.md` and `docs/DEVPOST_PROJECT_STORY.md`.
