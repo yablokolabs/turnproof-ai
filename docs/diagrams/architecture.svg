@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg viewBox="0 0 1280 560" xmlns="http://www.w3.org/2000/svg" role="img"
            aria-labelledby="architecture-title architecture-desc" id="architecture-root">
         <title id="architecture-title">TurnProof AI architecture</title>
         <desc id="architecture-desc">Three tiers: the React console in the browser, a loopback Fastify API with SQLite and the adapter status, and the packages/domain engine that holds every scheduling and feasibility rule.</desc>
@@ -89,26 +89,26 @@
         <text class="sub" x="816" y="377">34 scenarios + policy</text>
 
         <!-- Legend: horizontal bottom strip -->
-        <line x1="48" y1="630" x2="1232" y2="630" stroke="#0b2233" stroke-opacity="0.12" stroke-width="1"/>
+        <line x1="48" y1="470" x2="1232" y2="470" stroke="#0b2233" stroke-opacity="0.12" stroke-width="1"/>
 
-        <rect x="48" y="648" width="12" height="12" rx="2" fill="#0b6f8f" fill-opacity="0.08" stroke="#0b6f8f" stroke-width="1"/>
-        <text class="legend" x="68" y="658">focal engine</text>
+        <rect x="48" y="488" width="12" height="12" rx="2" fill="#0b6f8f" fill-opacity="0.08" stroke="#0b6f8f" stroke-width="1"/>
+        <text class="legend" x="68" y="498">focal engine</text>
 
-        <rect x="163" y="648" width="12" height="12" rx="2" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
-        <text class="legend" x="183" y="658">service</text>
+        <rect x="163" y="488" width="12" height="12" rx="2" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="legend" x="183" y="498">service</text>
 
-        <rect x="250" y="648" width="12" height="12" rx="2" fill="#0b2233" fill-opacity="0.05" stroke="#40566b" stroke-width="1"/>
-        <text class="legend" x="270" y="658">stored state</text>
+        <rect x="250" y="488" width="12" height="12" rx="2" fill="#0b2233" fill-opacity="0.05" stroke="#40566b" stroke-width="1"/>
+        <text class="legend" x="270" y="498">stored state</text>
 
-        <rect x="365" y="648" width="12" height="12" rx="2" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
-        <text class="legend" x="385" y="658">fixture input</text>
+        <rect x="365" y="488" width="12" height="12" rx="2" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
+        <text class="legend" x="385" y="498">fixture input</text>
 
-        <rect x="486" y="648" width="12" height="12" rx="2" fill="#0b2233" fill-opacity="0.02" stroke="#0b2233" stroke-opacity="0.20" stroke-width="1" stroke-dasharray="4,3"/>
-        <text class="legend" x="506" y="658">unimplemented</text>
+        <rect x="486" y="488" width="12" height="12" rx="2" fill="#0b2233" fill-opacity="0.02" stroke="#0b2233" stroke-opacity="0.20" stroke-width="1" stroke-dasharray="4,3"/>
+        <text class="legend" x="506" y="498">unimplemented</text>
 
-        <line x1="607" y1="654" x2="623" y2="654" stroke="#1f4f9c" stroke-width="1.2" marker-end="url(#architecture-arrow-link)"/>
-        <text class="legend" x="631" y="658">http call</text>
+        <line x1="607" y1="494" x2="623" y2="494" stroke="#1f4f9c" stroke-width="1.2" marker-end="url(#architecture-arrow-link)"/>
+        <text class="legend" x="631" y="498">http call</text>
 
-        <line x1="705" y1="654" x2="721" y2="654" stroke="#40566b" stroke-width="1.2" marker-end="url(#architecture-arrow)"/>
-        <text class="legend" x="729" y="658">data flow</text>
+        <line x1="705" y1="494" x2="721" y2="494" stroke="#40566b" stroke-width="1.2" marker-end="url(#architecture-arrow)"/>
+        <text class="legend" x="729" y="498">data flow</text>
       </svg>

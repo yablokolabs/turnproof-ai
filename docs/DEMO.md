@@ -27,7 +27,6 @@ Target length: 2 minutes 30 seconds, against a 3-minute ceiling. The competition
 | Asset | File | Use in the video |
 | --- | --- | --- |
 | Full logo | `turnproof-logo.png` (2172 x 724, RGBA) | Title card, 0:00 to 0:06, centred on the dark background |
-| Full logo | `turnproof-logo.png` | Persistent corner watermark, bottom left, about 15 percent opacity, for the whole video |
 | Icon | `turnproof-icon.png` (1254 x 1254) | Small badge beside the end-card text, and the repository's social preview image |
 
 Both files sit at the repository root and are referenced by `README.md` as well, so the video and the repository show the same mark.

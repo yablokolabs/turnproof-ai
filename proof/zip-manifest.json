@@ -1,11 +1,11 @@
 {
   "archive": "proof/turnproof-proof.zip",
-  "sha256": "9659a028457aabb8a2ccb23154f4064060407c3efd6c00cad004f8aee9a0a9c5",
-  "bytes": 16141448,
+  "sha256": "764fcb274c5415434659c06ad57e6f87cad5c2b608de5a43114e48ceb345ae33",
+  "bytes": 16368000,
   "entryCount": 146,
   "compression": "none (store method)",
   "fixedEntryTimestamp": "2026-10-12T00:00:00Z",
-  "documentedAt": "2026-10-12T11:03:17.413Z",
+  "documentedAt": "2026-10-12T12:42:12.479Z",
   "note": "Reproducible archive of the proof bundle. Entry timestamps are fixed so the same working tree produces the same bytes. Rebuilding after any source change changes the hash. This hash detects change; it is not tamper-proof storage.",
   "verification": {
     "command": "python3 -c \"import zipfile; z=zipfile.ZipFile('proof/turnproof-proof.zip'); print(len(z.namelist()), z.testzip())\"",

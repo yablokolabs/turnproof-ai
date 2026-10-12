@@ -183,3 +183,22 @@ Integration status: unchanged for the product. Deterministic available; replay a
 Unresolved assumptions: the narration is beat-aligned, not frame-accurate. The voice is the closest this plan allows rather than the exact target. The video's spoken figures still carry every limit the fixtures carry. No independent reproduction of any of this has been performed, and nothing has been pushed.
 
 One exact next action: run the full verification set on the frozen tree (`npm test`, `npm run typecheck`, `npm run test:e2e`, `npm run evaluate`, `npm run proof:export`, `npm run proof:zip`), then commit and push so the public repository matches.
+
+## C10 — Corner watermark removed from the demo video; diagram labels corrected
+
+Timestamp: 2026-10-12, UTC.
+
+- `scripts/record-demo.ts` no longer builds the wordmark plate or overlays it on the app segments. The title card and end card keep the centred wordmark.
+- `npm run demo:video` → exit 0. Beats 23.07→23.08, 19.67→19.68, 31.53→31.52, 21.58→21.56, 26.15→26.08. Final `proof/demo/turnproof-demo.mp4`: 1280x720 h264 + aac, 150.23 s, 5346230 bytes, sha256 `441d754f0f37…`. No narration call was made; the committed MP3s were muxed again. Frames at 15, 40, 60, 90 and 115 s show no plate in the bottom-left corner.
+- `docs/diagrams/review-sequence.html`: port label `:5175` → `:4181`; `POST /reviews` → `POST /api/decisions/:id/reviews`; added the `append review` write to SQLite and the `GET /api/decisions/:id/export` call that returns the decision packet. The review call does not return the packet.
+- `docs/diagrams/decision-flow.html`: `STALE_EVIDENCE` → `STALE_CRITICAL_EVIDENCE`, the code in `packages/domain/src/validate.ts`.
+- `docs/diagrams/architecture.html`: viewBox height 720 → 560 to remove the empty band above the legend.
+- `npm run diagrams:build` → 3 PNG + 3 SVG. `npm run diagrams:check` → exit 0, sizes 2560x1120, 2560x2000, 2560x1612, 0 findings in each category.
+- `npm test` → 45 passed. `npm run test:e2e` → 6 passed. `npm run typecheck` → clean.
+- `npm run proof:export` and `npm run proof:zip` rerun after these edits; the archive verification command prints 146 entries and `None`.
+
+Corrections to earlier checkpoints: C9 records diagram sizes 2560x1440 and 2560x1520 for the architecture and review diagrams; those are superseded by the sizes above. `README.md` no longer calls the committed MP4 unrecorded or silent, and `docs/DEMO.md` no longer lists a corner watermark.
+
+Removed the `demo:assemble` entry from `package.json`. It pointed to `scripts/assemble-demo.ts`, which was never committed; `npm run demo:video` does the assembly. `npm run` no longer lists a command that fails.
+
+One exact next action: review and merge the `remove-demo-watermark` pull request.

@@ -86,7 +86,7 @@
 
         <rect x="700" y="542" width="380" height="56" rx="6" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
         <text class="name" x="716" y="566">rejected, with reason codes</text>
-        <text class="sub" x="716" y="585">RESOURCE_RESERVED · STALE_EVIDENCE</text>
+        <text class="sub" x="716" y="585">RESOURCE_RESERVED · STALE_CRITICAL_EVIDENCE</text>
 
         <polygon points="440,650 580,700 440,750 300,700" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
         <text class="dtxt" x="440" y="696" text-anchor="middle">any feasible</text>

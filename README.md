@@ -36,7 +36,7 @@ Feasibility is decided before ranking, and an unresolved critical fact never rea
 
 A decision must be persisted before it can be reviewed, which is why the console records one as soon as a scenario loads.
 
-![TurnProof AI review round trip: select, decide, store in one transaction, review, then return the decision packet](docs/diagrams/review-sequence.png)
+![TurnProof AI review round trip: select, decide, store in one transaction, review, append the review, then export the decision packet](docs/diagrams/review-sequence.png)
 
 The three diagrams are generated from `docs/diagrams/*.html` by `npm run diagrams:build`, which rasterises each `<svg>` to a committed PNG and exports a standalone SVG beside it, and were authored against the design system in the community skill `cathrynlavery/diagram-design`, whose `export_svg.py` does the SVG extraction. Every diagram is a committed file, so the README renders without a server, a network fetch or a diagram runtime, and the vector versions sit beside the PNGs as `architecture.svg`, `decision-flow.svg` and `review-sequence.svg`. Only the SVG half of the build needs that skill (`npx skills add cathrynlavery/diagram-design --skill diagram-design --yes`); `npm run diagrams:build` builds the PNGs and says so if the skill is absent.
 
@@ -111,7 +111,7 @@ proof/demo/                              scripted screen recording and its manif
 | `docs/INTEGRATIONS.md` | what is integrated (nothing external), and what was never verified |
 | `docs/PILOT.md` | the unsecured four-week read-only shadow pilot proposal |
 | `docs/DECISIONS.md` | architecture decision record, including the bugs found and fixed |
-| `docs/DEMO.md` | the three-minute demo script and shot list; unrecorded, the committed MP4 is a silent screen capture |
+| `docs/DEMO.md` | the demo script and shot list behind the committed narrated MP4 |
 | `docs/diagrams/*.html` | the sources behind the three diagrams in this README |
 | `docs/PROGRESS.md` | milestone checkpoints with commands, results and blockers |
 | `PROJECT_BUILD.md` | the implementation specification this build follows |

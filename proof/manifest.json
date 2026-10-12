@@ -1,15 +1,15 @@
 {
   "manifestVersion": "1.0.0",
-  "capturedAt": "2026-10-12T11:03:17.006Z",
+  "capturedAt": "2026-10-12T12:42:11.563Z",
   "capturedAtNote": "Capture timestamp is when this command ran. It is not an evidence-lock timestamp.",
-  "commit": "e1198ac6fec590c6735c597703ffed5e9bc07447",
+  "commit": "3d927bc66f9a10c8afab8886a24e45f0d1360cd8",
   "workingTreeDirty": true,
   "environment": {
     "node": "v22.23.2",
     "platform": "linux x64",
     "packageManager": "npm workspaces"
   },
-  "bundleHash": "12ed4bd7ef57e41cca8ee65b76638263d3edc13d7ded46b0bcd552e96f5689d3",
+  "bundleHash": "1b2ca3f34d04ac15b5e92df23249aebe07c95f479ed087dc08a4c70b82c1cd51",
   "bundleHashMethod": "sha256 of the sorted \"path:sha256\" lines below",
   "counts": {
     "artefacts": 125,
@@ -52,21 +52,21 @@
       "path": "proof/packets/case-a-packet.json",
       "scenarioId": "case-a",
       "decisionState": "recommended",
-      "hash": "0ff6d79b8aacf0668ff071dc270f749e20f070a35e738bf09722801ca5fc68c2"
+      "hash": "bb86fadd2a334a00010ff44c82d7f651a534f0fe7ce78fb22b93227b0b4849e2"
     },
     {
       "name": "case-b-packet.json",
       "path": "proof/packets/case-b-packet.json",
       "scenarioId": "case-b",
       "decisionState": "no_feasible_option",
-      "hash": "47aa440ca9058cbeb069e1ac087b12dba942d17b702c877a9c94ec22ee1561b6"
+      "hash": "679217aa614b503a225fbb50cdd5bed6ff6d8325fe11d9c3c23282c82c2e3153"
     },
     {
       "name": "case-c-packet.json",
       "path": "proof/packets/case-c-packet.json",
       "scenarioId": "case-c",
       "decisionState": "needs_review",
-      "hash": "725b068efcb0e5e9bc065253f302b4d995b8ac1fd87fab7fab50459f0764da87"
+      "hash": "f164e5b071a62d67e210fd3d521ccd12fb52c483546f1c7b835d72b3420ef0a8"
     }
   ],
   "artefacts": [
@@ -82,8 +82,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11342,
-      "sha256": "00354ad2a69352cc15f39a945268784e41f86436bdc9ebc7e57534984c5ee47d"
+      "bytes": 11324,
+      "sha256": "59ebfa9c68e90868822c3fc93b0a49beba2f407d74721df69abe9ec02398555c"
     },
     {
       "path": "apps/api/package.json",
@@ -247,8 +247,8 @@
     },
     {
       "path": "docs/DEMO.md",
-      "bytes": 7870,
-      "sha256": "1fb29214b7f1b286e0b3d830f6ab85b79a79cd9023f61b0e94b799e94470eb16"
+      "bytes": 7743,
+      "sha256": "03e688b531d8f5bae3f4b8b0f85241985e55ea190767e6430201837f065f3684"
     },
     {
       "path": "docs/DEVPOST_PROJECT_STORY.md",
@@ -277,8 +277,8 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 24469,
-      "sha256": "6249b7057efe9fb339a379c9f5bd534b44dd036ddbac7568c4a4a0875dfa0d28"
+      "bytes": 26605,
+      "sha256": "ff114f20fd2d45841d13ceb97e1b71bf2474580b9f827225780ffa8b1e00bd33"
     },
     {
       "path": "docs/demo-narration.json",
@@ -288,47 +288,47 @@
     {
       "path": "docs/diagrams/architecture.html",
       "bytes": 8697,
-      "sha256": "e3dc9abc16ebd8519ae30b5d1c0f4fb9c04c68c89852cc05c40347d7618ea8a6"
+      "sha256": "871e1066ec4e8bd5d172b44529f21a1f9aefdb2a0bc17f207837644179c81ba8"
     },
     {
       "path": "docs/diagrams/architecture.png",
-      "bytes": 109498,
-      "sha256": "c012c5904f4a3d33e7eb5bb0d1f293f4a624dd40add336a40447d219fd3b5ccd"
+      "bytes": 105903,
+      "sha256": "57f6ae2f4b90d0150739166c6621963f8c7691fdb40f0a8d32bb90c2f225e23f"
     },
     {
       "path": "docs/diagrams/architecture.svg",
       "bytes": 8896,
-      "sha256": "d156d0236dd1f4a0fa75891c0b9706b508ce0846f9bbc898066c345d9df463d6"
+      "sha256": "41512bfa5392aeeee8eab7e3a13c94e03e7e59c3da73a5ffffe0078f1bdc93b3"
     },
     {
       "path": "docs/diagrams/decision-flow.html",
-      "bytes": 7753,
-      "sha256": "9832d9401ea3337bdf62036b23f69dc35166dee1f628b2cb2108de69bb733d09"
+      "bytes": 7762,
+      "sha256": "42eda19f4528813662f892e38d96d9c8d412bcb2fb70de5d69924001e954bcb8"
     },
     {
       "path": "docs/diagrams/decision-flow.png",
-      "bytes": 202754,
-      "sha256": "325b6ec975209a7e5e203421d6cc6e2807fcfb354cbff0256099cf275b509c69"
+      "bytes": 203444,
+      "sha256": "0ba3dac7b93911c8fc9991c57c4931ce746b6f7fe050335e1bed5426a55a2511"
     },
     {
       "path": "docs/diagrams/decision-flow.svg",
-      "bytes": 8059,
-      "sha256": "531de2784f0d1106c048ce082188feb93fc67156a5397221d64a2eb073a270bb"
+      "bytes": 8068,
+      "sha256": "440ef16fa76a94a91434d7561ae6659112f1afd711c90ef01cae80b24f63635c"
     },
     {
       "path": "docs/diagrams/review-sequence.html",
-      "bytes": 9216,
-      "sha256": "d462f4435ce7907ded6ab022a78417fada3dc144b689b410f95edcf05ee5b463"
+      "bytes": 9923,
+      "sha256": "10ef2b3d8eff62ff17760e01ad8a02cd00cc6c1d00764575b5dbdc5fa8c66e73"
     },
     {
       "path": "docs/diagrams/review-sequence.png",
-      "bytes": 110640,
-      "sha256": "903e24a7d92b186cc9a4d71e5d5d385b54d11cc59cbd3f164d3c262f46859735"
+      "bytes": 122368,
+      "sha256": "e19dee31e5ff805c075ed1f0e8fb29d4790b3ad45dff0a048df4ddba35024a01"
     },
     {
       "path": "docs/diagrams/review-sequence.svg",
-      "bytes": 9685,
-      "sha256": "d0b56efea2282630a7a449174e076df09974fdb47fd5843b6fad147aa73b4982"
+      "bytes": 10432,
+      "sha256": "0a03bc0f9b211b12ee91b276000b5a385caa078cbf8777c6ec58352ae610694a"
     },
     {
       "path": "fixtures/loader.ts",
@@ -517,8 +517,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 1620,
-      "sha256": "6af46b8107aa648c8124ca53f2f4863d5b70739fa423ee4e6d1a7e17ae54e0f6"
+      "bytes": 1567,
+      "sha256": "d185409d33144febb9018e314f737520e84ea4c7275120851abe79ede7dc77d3"
     },
     {
       "path": "packages/adapters/package.json",
@@ -647,8 +647,8 @@
     },
     {
       "path": "scripts/record-demo.ts",
-      "bytes": 21231,
-      "sha256": "e0cd1919d6d8f5ee8641906da9e62f71db701c2e194ae44c265b3489f8a0d415"
+      "bytes": 20623,
+      "sha256": "d58ccd31050068cfe8f928ba8b64b39ea766eaf7d26a3a45b3e0e8ead0790406"
     },
     {
       "path": "scripts/seed.ts",
