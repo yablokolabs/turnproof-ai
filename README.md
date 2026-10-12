@@ -41,7 +41,7 @@ Node prints `ExperimentalWarning: SQLite is an experimental feature` on startup.
 | `npm run test:e2e` | builds the UI, serves it from the API on loopback, runs 6 Playwright browser tests: 5 behaviour flows plus 1 screenshot capture into `proof/screenshots/` | all pass |
 | `npm run typecheck` | TypeScript check across every workspace | exit 0 |
 | `npm run evaluate` | decides 34 fixtures, writes `proof/results/evaluation.json` | 27 recommended, 3 abstained, 4 no feasible option |
-| `npm run proof:export` | writes `proof/manifest.json` and the three decision packets, hashing every tracked artefact | 109 artefacts, 34 scenarios, 3 packets |
+| `npm run proof:export` | writes `proof/manifest.json` and the three decision packets, hashing every tracked artefact | manifest lists the artefact count, scenario count and bundle hash |
 | `npm run proof:zip` | packages the bundle into `proof/turnproof-proof.zip` and records the archive hash in `proof/zip-manifest.json` | 121 entries; hash in `proof/zip-manifest.json` |
 
 The proof archive carries a fixed entry timestamp, so the same working tree produces the same bytes. It was verified independently rather than self-reported, with `python3 -c "import zipfile; z=zipfile.ZipFile('proof/turnproof-proof.zip'); print(len(z.namelist()), z.testzip())"`, which reported 121 entries and a clean CRC check, and Python's own sha256 of the file matched the value recorded in `proof/zip-manifest.json`. That value is kept outside the archive on purpose: the archive contains this README, so a hash pinned inside it could never stay valid. Rebuilding after any source change changes the hash, so treat it as a change detector, not as tamper-proof storage.

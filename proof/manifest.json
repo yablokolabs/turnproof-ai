@@ -1,18 +1,18 @@
 {
   "manifestVersion": "1.0.0",
-  "capturedAt": "2026-10-12T10:05:56.071Z",
+  "capturedAt": "2026-10-12T10:12:04.624Z",
   "capturedAtNote": "Capture timestamp is when this command ran. It is not an evidence-lock timestamp.",
-  "commit": "e42e1e173b678f594a9ec760df7114e123b49581",
+  "commit": "3d9093ea82d059bb98b983701e913467047046c6",
   "workingTreeDirty": true,
   "environment": {
     "node": "v22.23.2",
     "platform": "linux x64",
     "packageManager": "npm workspaces"
   },
-  "bundleHash": "faf546f1a42d7d7e886f55003402432c2feae598beb9303fa4d945f1cad173bf",
+  "bundleHash": "7eb4994d3bf644ac6a4d9483316af6b0b51c368acddb6f5d10bc28b706b15d71",
   "bundleHashMethod": "sha256 of the sorted \"path:sha256\" lines below",
   "counts": {
-    "artefacts": 109,
+    "artefacts": 110,
     "scenarios": 34,
     "packets": 3
   },
@@ -52,21 +52,21 @@
       "path": "proof/packets/case-a-packet.json",
       "scenarioId": "case-a",
       "decisionState": "recommended",
-      "hash": "7288dd6720cb04fc65eb7150cb620056ca491672c9d5e28d56d7179b661da84b"
+      "hash": "a41d9175f0f41b30348d1d5c2d302bd879f71d6c79494150a0ea76fb1c1ba221"
     },
     {
       "name": "case-b-packet.json",
       "path": "proof/packets/case-b-packet.json",
       "scenarioId": "case-b",
       "decisionState": "no_feasible_option",
-      "hash": "f32ceb1396bc0973089b393acf95c7e5c2bb2d70d50b91490804e870622fe5cf"
+      "hash": "8492be94195ea3481be743f7675b5786d9dfe724022c12a20265a32fb8962fee"
     },
     {
       "name": "case-c-packet.json",
       "path": "proof/packets/case-c-packet.json",
       "scenarioId": "case-c",
       "decisionState": "needs_review",
-      "hash": "f33f40e3635f01b191952e8ec915a07c818bfa6748443f0ab5a992d2473d0fd0"
+      "hash": "c5f8e18e9423ac1b29f276adce55e8fd97804f91d44a9bd962e0faef6a141915"
     }
   ],
   "artefacts": [
@@ -82,13 +82,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 6761,
-      "sha256": "88da0fe6efd669da34647495c5dfc1cd14976feccd0988a54638d0296c332224"
+      "bytes": 7696,
+      "sha256": "ad6c50d3d047b6555a2ffce4d92dfa801ffcb6e99c33bf22c2a179132876bbc7"
     },
     {
       "path": "SESSION_CONTINUATION.md",
-      "bytes": 2446,
-      "sha256": "53788cfb40015ac953188db8122838e19ba44e3a5adb32e84a95735cb64156ce"
+      "bytes": 3395,
+      "sha256": "af2b0ca06d0c9841c6a83ef0a755bc677b2c2c8c9502bd2004e4a5dee6f13da1"
     },
     {
       "path": "apps/api/package.json",
@@ -242,18 +242,18 @@
     },
     {
       "path": "docs/DEMO.md",
-      "bytes": 5244,
-      "sha256": "c2d9a03610fd5d6d67e617097b07b2ee544a9c9dab7c77de884614c1e036e6aa"
+      "bytes": 5267,
+      "sha256": "237c64badcfcd97515bc91a1625b9f6ebf72f194d587d5e098b63e3b5d1afaaf"
     },
     {
       "path": "docs/DEVPOST_PROJECT_STORY.md",
-      "bytes": 9257,
-      "sha256": "efd65d3dde4cce066e526bd8cd4ccc9d99fd95e2c0bc7750d78c701e6c85e3fb"
+      "bytes": 9316,
+      "sha256": "938db2d34033536b82a4756b6482885e0022cbd7fb4d384c169352f594e9c9c0"
     },
     {
       "path": "docs/EVALUATION.md",
-      "bytes": 7943,
-      "sha256": "b45eb0535d78eab0a8ad459c47bf7dc66ecb3051195bb1bac25b2abea0f81fa2"
+      "bytes": 8662,
+      "sha256": "fe0682a729d3ff09a82faccc5aea8ecbb66b3c33e5ca1798af5b3f005773596d"
     },
     {
       "path": "docs/INTEGRATIONS.md",
@@ -272,8 +272,8 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 11786,
-      "sha256": "73f664fbc7f1ed2979994542ecc82d1903fe189f00625e75ed696524942c889f"
+      "bytes": 18713,
+      "sha256": "77c5a1d76034c4de965c1364b4d938e0d7579a096ddcf889e26f5791bbdf3b07"
     },
     {
       "path": "fixtures/loader.ts",
@@ -462,8 +462,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 1313,
-      "sha256": "2ea2a61ad9da451880c74b9990821386e32c05aef80e0399cf257453364dffa9"
+      "bytes": 1358,
+      "sha256": "5f8e567ffe4cc9a0cd8b0489f45bda7e5a519aa461aec0bfcc429eb99c0c417a"
     },
     {
       "path": "packages/adapters/package.json",
@@ -569,6 +569,11 @@
       "path": "scripts/proof-export.ts",
       "bytes": 8027,
       "sha256": "2282ec54ccd9d5b7c865d1d97a9abc817a97a394ba16571d908b4d589f6b77f7"
+    },
+    {
+      "path": "scripts/proof-zip.ts",
+      "bytes": 7197,
+      "sha256": "0e0ca3b80e70703fd752a3f398e97c035960a186b5e163e841cdd4cdde79a541"
     },
     {
       "path": "scripts/seed.ts",

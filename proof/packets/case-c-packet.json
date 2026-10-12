@@ -1,6 +1,6 @@
 {
   "packetVersion": "turnproof-packet-1.0.0",
-  "generatedAt": "2026-10-12T10:05:56Z",
+  "generatedAt": "2026-10-12T10:12:04Z",
   "scenarioId": "case-c",
   "snapshotHash": "d940cb161b62aca1ad3ba4a519f250d63f54708fab4204039f65b7a65f8f921d",
   "policyVersion": "fixture-policy-1.0.0",
@@ -736,7 +736,7 @@
   ],
   "timestamps": {
     "asOf": "2026-10-12T09:15:00Z",
-    "decisionCreatedAt": "2026-10-12T10:05:56Z"
+    "decisionCreatedAt": "2026-10-12T10:12:04Z"
   },
   "hashes": {
     "snapshotHash": "d940cb161b62aca1ad3ba4a519f250d63f54708fab4204039f65b7a65f8f921d",
