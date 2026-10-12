@@ -1,0 +1,927 @@
+{
+  "packetVersion": "turnproof-packet-1.0.0",
+  "generatedAt": "2026-10-12T10:05:56Z",
+  "scenarioId": "case-b",
+  "snapshotHash": "5e083fce9380109d79b44b4d6c3d7291ea44caa79ec95af9f308cb407720fc80",
+  "policyVersion": "fixture-policy-1.0.0",
+  "solverVersion": "tp-solver-0.1.0+tp-0.1.0",
+  "providerMode": "deterministic",
+  "providerStatus": "available",
+  "providerName": "deterministic-rules",
+  "snapshot": {
+    "scenarioId": "case-b",
+    "label": "Case B - assigned fuel unit unavailable and every alternate already committed; no feasible recovery",
+    "category": "adverse",
+    "revision": 2,
+    "asOf": "2026-10-12T09:14:00Z",
+    "turnaround": {
+      "id": "TO-TP202-B",
+      "station": "SYN-Station-Alpha",
+      "flightNumber": "TP-202",
+      "aircraft": "SYN-A321",
+      "plannedStartAt": "2026-10-12T09:00:00Z",
+      "plannedReadyAt": "2026-10-12T09:50:00Z",
+      "revision": 2
+    },
+    "tasks": [
+      {
+        "id": "t-inspect",
+        "turnaroundId": "TO-TP202-B",
+        "kind": "inspection",
+        "predecessors": [],
+        "plannedStart": "2026-10-12T09:00:00Z",
+        "durationMin": 10,
+        "status": "pending",
+        "evidenceIds": []
+      },
+      {
+        "id": "t-fuel",
+        "turnaroundId": "TO-TP202-B",
+        "kind": "fueling",
+        "predecessors": [
+          "t-inspect"
+        ],
+        "plannedStart": "2026-10-12T09:10:00Z",
+        "durationMin": 20,
+        "status": "pending",
+        "resourceId": "TANKER-1",
+        "resourceKind": "fuel_truck",
+        "evidenceIds": []
+      },
+      {
+        "id": "t-board",
+        "turnaroundId": "TO-TP202-B",
+        "kind": "boarding",
+        "predecessors": [
+          "t-fuel"
+        ],
+        "plannedStart": "2026-10-12T09:30:00Z",
+        "durationMin": 15,
+        "status": "pending",
+        "evidenceIds": []
+      },
+      {
+        "id": "t-ready",
+        "turnaroundId": "TO-TP202-B",
+        "kind": "ready",
+        "predecessors": [
+          "t-board"
+        ],
+        "plannedStart": "2026-10-12T09:45:00Z",
+        "durationMin": 5,
+        "status": "pending",
+        "evidenceIds": []
+      }
+    ],
+    "resources": [
+      {
+        "id": "TANKER-1",
+        "kind": "fuel_truck",
+        "availableFrom": "2026-10-12T09:00:00Z",
+        "availableUntil": "2026-10-12T09:20:00Z",
+        "unavailable": true,
+        "authorization": "fixture",
+        "evidenceIds": [
+          "ev-b-tanker1"
+        ],
+        "reservations": []
+      },
+      {
+        "id": "TANKER-2",
+        "kind": "fuel_truck",
+        "availableFrom": "2026-10-12T09:00:00Z",
+        "availableUntil": "2026-10-12T11:00:00Z",
+        "unavailable": false,
+        "authorization": "fixture",
+        "evidenceIds": [
+          "ev-b-tanker2"
+        ],
+        "reservations": [
+          {
+            "from": "2026-10-12T09:00:00Z",
+            "to": "2026-10-12T11:00:00Z",
+            "label": "Committed for the whole window to synthetic turnaround TP-118"
+          }
+        ]
+      },
+      {
+        "id": "TANKER-3",
+        "kind": "fuel_truck",
+        "availableFrom": "2026-10-12T09:00:00Z",
+        "availableUntil": "2026-10-12T11:00:00Z",
+        "unavailable": false,
+        "authorization": "fixture",
+        "evidenceIds": [
+          "ev-b-tanker3"
+        ],
+        "reservations": [
+          {
+            "from": "2026-10-12T09:00:00Z",
+            "to": "2026-10-12T11:00:00Z",
+            "label": "Committed for the whole window to synthetic turnaround TP-131"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "id": "ev-b-tanker1",
+        "sourceId": "synthetic-board-feed",
+        "sourceKind": "synthetic",
+        "observedAt": "2026-10-12T09:12:00Z",
+        "ingestedAt": "2026-10-12T09:13:00Z",
+        "content": "Fuel unit TANKER-1 reports an unserviceable pump and is unavailable for synthetic turnaround TP-202.",
+        "contentHash": "09af18b9768c910df4b9b147b630a05eab78d23d0561530950ce4d51c33533d4",
+        "trust": "fixture"
+      },
+      {
+        "id": "ev-b-tanker2",
+        "sourceId": "synthetic-board-feed",
+        "sourceKind": "synthetic",
+        "observedAt": "2026-10-12T09:14:00Z",
+        "ingestedAt": "2026-10-12T09:14:00Z",
+        "content": "TANKER-2 remains committed to synthetic turnaround TP-118 across the entire recovery window.",
+        "contentHash": "e0076d88c8ce5682bba1e1e0645b33d431f14309a5d2ba1a34840e408053c897",
+        "trust": "fixture"
+      },
+      {
+        "id": "ev-b-tanker3",
+        "sourceId": "synthetic-board-feed",
+        "sourceKind": "synthetic",
+        "observedAt": "2026-10-12T09:14:00Z",
+        "ingestedAt": "2026-10-12T09:14:00Z",
+        "content": "TANKER-3 remains committed to synthetic turnaround TP-131 across the entire recovery window.",
+        "contentHash": "7d9012229731ec0e7a26c9fd38a81f4be377ad2d7999dcc6f6919cbf026de35c",
+        "trust": "fixture"
+      }
+    ],
+    "events": [
+      {
+        "id": "evt-b-tanker1-unavailable",
+        "revision": 2,
+        "occurredAt": "2026-10-12T09:12:00Z",
+        "ingestedAt": "2026-10-12T09:13:00Z",
+        "kind": "resource_unavailable",
+        "targetId": "TANKER-1",
+        "field": "unavailable",
+        "value": true,
+        "evidenceId": "ev-b-tanker1",
+        "sourceLabel": "Synthetic board feed"
+      }
+    ],
+    "conflicts": [],
+    "staleClaims": [],
+    "includedNoteEventIds": [],
+    "rejectedEventIds": [],
+    "policyVersion": "fixture-policy-1.0.0",
+    "inputHash": "5e083fce9380109d79b44b4d6c3d7291ea44caa79ec95af9f308cb407720fc80"
+  },
+  "normalizedEvents": [
+    {
+      "id": "evt-b-tanker1-unavailable",
+      "revision": 2,
+      "occurredAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "kind": "resource_unavailable",
+      "targetId": "TANKER-1",
+      "field": "unavailable",
+      "value": true,
+      "evidenceId": "ev-b-tanker1",
+      "sourceLabel": "Synthetic board feed"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-b-tanker1",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:12:00Z",
+      "ingestedAt": "2026-10-12T09:13:00Z",
+      "content": "Fuel unit TANKER-1 reports an unserviceable pump and is unavailable for synthetic turnaround TP-202.",
+      "contentHash": "09af18b9768c910df4b9b147b630a05eab78d23d0561530950ce4d51c33533d4",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-b-tanker2",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:14:00Z",
+      "ingestedAt": "2026-10-12T09:14:00Z",
+      "content": "TANKER-2 remains committed to synthetic turnaround TP-118 across the entire recovery window.",
+      "contentHash": "e0076d88c8ce5682bba1e1e0645b33d431f14309a5d2ba1a34840e408053c897",
+      "trust": "fixture"
+    },
+    {
+      "id": "ev-b-tanker3",
+      "sourceId": "synthetic-board-feed",
+      "sourceKind": "synthetic",
+      "observedAt": "2026-10-12T09:14:00Z",
+      "ingestedAt": "2026-10-12T09:14:00Z",
+      "content": "TANKER-3 remains committed to synthetic turnaround TP-131 across the entire recovery window.",
+      "contentHash": "7d9012229731ec0e7a26c9fd38a81f4be377ad2d7999dcc6f6919cbf026de35c",
+      "trust": "fixture"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": {
+        "id": "use_alternate_resource:t-fuel:TANKER-2",
+        "action": "use_alternate_resource",
+        "taskId": "t-fuel",
+        "resourceId": "TANKER-2",
+        "evidenceIds": [
+          "ev-b-tanker2"
+        ],
+        "assumptions": [
+          "Assumes TANKER-2 (fuel_truck) can serve task t-fuel (fueling) under synthetic policy fixture-policy-1.0.0.",
+          "Assumes availability reported at 2026-10-12T09:00:00Z holds for the whole task window."
+        ],
+        "estimatedCostUnits": 12
+      },
+      "feasible": false,
+      "reasonCodes": [
+        "RESOURCE_RESERVED",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "fail"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ],
+      "violations": [
+        {
+          "code": "RESOURCE_RESERVED",
+          "message": "Requested window 2026-10-12T09:10:00Z-2026-10-12T09:30:00Z on TANKER-2 collides with existing commitment \"Committed for the whole window to synthetic turnaround TP-118\" (2026-10-12T09:00:00Z-2026-10-12T11:00:00Z)",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-2"
+        },
+        {
+          "code": "OUTSIDE_AVAILABILITY_WINDOW",
+          "message": "Task t-fuel would finish 2026-10-12T11:20:00Z, after TANKER-2 availability ends 2026-10-12T11:00:00Z",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-2"
+        },
+        {
+          "code": "READINESS_UNCERTAIN",
+          "message": "Readiness cannot be asserted: Task t-fuel would finish 2026-10-12T11:20:00Z, outside resource TANKER-2 availability ending 2026-10-12T11:00:00Z",
+          "taskId": "t-fuel"
+        }
+      ],
+      "evidenceWarnings": [],
+      "requiresReview": false,
+      "projectedDelayMin": null,
+      "projectedRecoveryMin": null,
+      "schedule": {
+        "scenarioId": "case-b",
+        "tasks": [
+          {
+            "taskId": "t-inspect",
+            "kind": "inspection",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:00:00Z",
+            "finish": "2026-10-12T09:10:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:00:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-fuel",
+            "kind": "fueling",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:00:00Z",
+            "finish": "2026-10-12T11:20:00Z",
+            "resourceId": "TANKER-2",
+            "causes": [
+              "plannedStart 2026-10-12T09:10:00Z",
+              "predecessor t-inspect finishes 2026-10-12T09:10:00Z",
+              "resource TANKER-2 already reserved before 2026-10-12T11:00:00Z"
+            ],
+            "uncertain": true
+          },
+          {
+            "taskId": "t-board",
+            "kind": "boarding",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:20:00Z",
+            "finish": "2026-10-12T11:35:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:30:00Z",
+              "predecessor t-fuel finishes 2026-10-12T11:20:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-ready",
+            "kind": "ready",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:35:00Z",
+            "finish": "2026-10-12T11:40:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:45:00Z",
+              "predecessor t-board finishes 2026-10-12T11:35:00Z"
+            ],
+            "uncertain": false
+          }
+        ],
+        "readyAt": null,
+        "readyAtTaskId": null,
+        "plannedReadyAt": "2026-10-12T09:50:00Z",
+        "projectedDelayMin": null,
+        "uncertainties": [
+          "Task t-fuel would finish 2026-10-12T11:20:00Z, outside resource TANKER-2 availability ending 2026-10-12T11:00:00Z"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "use_alternate_resource:t-fuel:TANKER-3",
+        "action": "use_alternate_resource",
+        "taskId": "t-fuel",
+        "resourceId": "TANKER-3",
+        "evidenceIds": [
+          "ev-b-tanker3"
+        ],
+        "assumptions": [
+          "Assumes TANKER-3 (fuel_truck) can serve task t-fuel (fueling) under synthetic policy fixture-policy-1.0.0.",
+          "Assumes availability reported at 2026-10-12T09:00:00Z holds for the whole task window."
+        ],
+        "estimatedCostUnits": 12
+      },
+      "feasible": false,
+      "reasonCodes": [
+        "RESOURCE_RESERVED",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "fail"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ],
+      "violations": [
+        {
+          "code": "RESOURCE_RESERVED",
+          "message": "Requested window 2026-10-12T09:10:00Z-2026-10-12T09:30:00Z on TANKER-3 collides with existing commitment \"Committed for the whole window to synthetic turnaround TP-131\" (2026-10-12T09:00:00Z-2026-10-12T11:00:00Z)",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-3"
+        },
+        {
+          "code": "OUTSIDE_AVAILABILITY_WINDOW",
+          "message": "Task t-fuel would finish 2026-10-12T11:20:00Z, after TANKER-3 availability ends 2026-10-12T11:00:00Z",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-3"
+        },
+        {
+          "code": "READINESS_UNCERTAIN",
+          "message": "Readiness cannot be asserted: Task t-fuel would finish 2026-10-12T11:20:00Z, outside resource TANKER-3 availability ending 2026-10-12T11:00:00Z",
+          "taskId": "t-fuel"
+        }
+      ],
+      "evidenceWarnings": [],
+      "requiresReview": false,
+      "projectedDelayMin": null,
+      "projectedRecoveryMin": null,
+      "schedule": {
+        "scenarioId": "case-b",
+        "tasks": [
+          {
+            "taskId": "t-inspect",
+            "kind": "inspection",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:00:00Z",
+            "finish": "2026-10-12T09:10:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:00:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-fuel",
+            "kind": "fueling",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:00:00Z",
+            "finish": "2026-10-12T11:20:00Z",
+            "resourceId": "TANKER-3",
+            "causes": [
+              "plannedStart 2026-10-12T09:10:00Z",
+              "predecessor t-inspect finishes 2026-10-12T09:10:00Z",
+              "resource TANKER-3 already reserved before 2026-10-12T11:00:00Z"
+            ],
+            "uncertain": true
+          },
+          {
+            "taskId": "t-board",
+            "kind": "boarding",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:20:00Z",
+            "finish": "2026-10-12T11:35:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:30:00Z",
+              "predecessor t-fuel finishes 2026-10-12T11:20:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-ready",
+            "kind": "ready",
+            "status": "pending",
+            "earliestStart": "2026-10-12T11:35:00Z",
+            "finish": "2026-10-12T11:40:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:45:00Z",
+              "predecessor t-board finishes 2026-10-12T11:35:00Z"
+            ],
+            "uncertain": false
+          }
+        ],
+        "readyAt": null,
+        "readyAtTaskId": null,
+        "plannedReadyAt": "2026-10-12T09:50:00Z",
+        "projectedDelayMin": null,
+        "uncertainties": [
+          "Task t-fuel would finish 2026-10-12T11:20:00Z, outside resource TANKER-3 availability ending 2026-10-12T11:00:00Z"
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "id": "wait:t-fuel:baseline",
+        "action": "wait",
+        "taskId": "t-fuel",
+        "evidenceIds": [],
+        "assumptions": [
+          "No new resource is introduced.",
+          "The reported delay is absorbed by the existing plan."
+        ],
+        "estimatedCostUnits": 0
+      },
+      "feasible": false,
+      "reasonCodes": [
+        "RESOURCE_UNAVAILABLE",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "pass"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ],
+      "violations": [
+        {
+          "code": "RESOURCE_UNAVAILABLE",
+          "message": "Resource TANKER-1 is marked unavailable",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-1"
+        },
+        {
+          "code": "OUTSIDE_AVAILABILITY_WINDOW",
+          "message": "Task t-fuel would finish 2026-10-12T09:40:00Z, after TANKER-1 availability ends 2026-10-12T09:20:00Z",
+          "taskId": "t-fuel",
+          "resourceId": "TANKER-1"
+        },
+        {
+          "code": "READINESS_UNCERTAIN",
+          "message": "Readiness cannot be asserted: Assigned resource TANKER-1 is marked unavailable",
+          "taskId": "t-fuel"
+        }
+      ],
+      "evidenceWarnings": [],
+      "requiresReview": false,
+      "projectedDelayMin": null,
+      "projectedRecoveryMin": null,
+      "schedule": {
+        "scenarioId": "case-b",
+        "tasks": [
+          {
+            "taskId": "t-inspect",
+            "kind": "inspection",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:00:00Z",
+            "finish": "2026-10-12T09:10:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:00:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-fuel",
+            "kind": "fueling",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:20:00Z",
+            "finish": "2026-10-12T09:40:00Z",
+            "resourceId": "TANKER-1",
+            "causes": [
+              "plannedStart 2026-10-12T09:10:00Z",
+              "predecessor t-inspect finishes 2026-10-12T09:10:00Z",
+              "resource TANKER-1 unavailable; window end 2026-10-12T09:20:00Z"
+            ],
+            "uncertain": true
+          },
+          {
+            "taskId": "t-board",
+            "kind": "boarding",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:40:00Z",
+            "finish": "2026-10-12T09:55:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:30:00Z",
+              "predecessor t-fuel finishes 2026-10-12T09:40:00Z"
+            ],
+            "uncertain": false
+          },
+          {
+            "taskId": "t-ready",
+            "kind": "ready",
+            "status": "pending",
+            "earliestStart": "2026-10-12T09:55:00Z",
+            "finish": "2026-10-12T10:00:00Z",
+            "causes": [
+              "plannedStart 2026-10-12T09:45:00Z",
+              "predecessor t-board finishes 2026-10-12T09:55:00Z"
+            ],
+            "uncertain": false
+          }
+        ],
+        "readyAt": null,
+        "readyAtTaskId": null,
+        "plannedReadyAt": "2026-10-12T09:50:00Z",
+        "projectedDelayMin": null,
+        "uncertainties": [
+          "Assigned resource TANKER-1 is marked unavailable",
+          "Task t-fuel would finish 2026-10-12T09:40:00Z, outside resource TANKER-1 availability ending 2026-10-12T09:20:00Z"
+        ]
+      }
+    }
+  ],
+  "constraintsByCandidate": [
+    {
+      "candidateId": "use_alternate_resource:t-fuel:TANKER-2",
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "fail"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "candidateId": "use_alternate_resource:t-fuel:TANKER-3",
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "fail"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "candidateId": "wait:t-fuel:baseline",
+      "constraints": [
+        {
+          "code": "dependency_graph",
+          "label": "Dependency graph is valid",
+          "status": "pass"
+        },
+        {
+          "code": "resource_kind",
+          "label": "Assigned resource kind matches task requirement",
+          "status": "pass"
+        },
+        {
+          "code": "exclusive_availability",
+          "label": "Exclusive resource availability respected",
+          "status": "pass"
+        },
+        {
+          "code": "availability_window",
+          "label": "Task fits inside the resource availability window",
+          "status": "fail"
+        },
+        {
+          "code": "duration_bounds",
+          "label": "Task durations inside fixture policy bands",
+          "status": "pass"
+        },
+        {
+          "code": "nonnegative_timing",
+          "label": "No negative or reversed timings",
+          "status": "pass"
+        },
+        {
+          "code": "completed_task_immutability",
+          "label": "Completed tasks are not modified",
+          "status": "pass"
+        },
+        {
+          "code": "critical_evidence_freshness",
+          "label": "Critical evidence within the synthetic freshness budget",
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "baselineSchedule": {
+    "scenarioId": "case-b",
+    "tasks": [
+      {
+        "taskId": "t-inspect",
+        "kind": "inspection",
+        "status": "pending",
+        "earliestStart": "2026-10-12T09:00:00Z",
+        "finish": "2026-10-12T09:10:00Z",
+        "causes": [
+          "plannedStart 2026-10-12T09:00:00Z"
+        ],
+        "uncertain": false
+      },
+      {
+        "taskId": "t-fuel",
+        "kind": "fueling",
+        "status": "pending",
+        "earliestStart": "2026-10-12T09:20:00Z",
+        "finish": "2026-10-12T09:40:00Z",
+        "resourceId": "TANKER-1",
+        "causes": [
+          "plannedStart 2026-10-12T09:10:00Z",
+          "predecessor t-inspect finishes 2026-10-12T09:10:00Z",
+          "resource TANKER-1 unavailable; window end 2026-10-12T09:20:00Z"
+        ],
+        "uncertain": true
+      },
+      {
+        "taskId": "t-board",
+        "kind": "boarding",
+        "status": "pending",
+        "earliestStart": "2026-10-12T09:40:00Z",
+        "finish": "2026-10-12T09:55:00Z",
+        "causes": [
+          "plannedStart 2026-10-12T09:30:00Z",
+          "predecessor t-fuel finishes 2026-10-12T09:40:00Z"
+        ],
+        "uncertain": false
+      },
+      {
+        "taskId": "t-ready",
+        "kind": "ready",
+        "status": "pending",
+        "earliestStart": "2026-10-12T09:55:00Z",
+        "finish": "2026-10-12T10:00:00Z",
+        "causes": [
+          "plannedStart 2026-10-12T09:45:00Z",
+          "predecessor t-board finishes 2026-10-12T09:55:00Z"
+        ],
+        "uncertain": false
+      }
+    ],
+    "readyAt": null,
+    "readyAtTaskId": null,
+    "plannedReadyAt": "2026-10-12T09:50:00Z",
+    "projectedDelayMin": null,
+    "uncertainties": [
+      "Assigned resource TANKER-1 is marked unavailable",
+      "Task t-fuel would finish 2026-10-12T09:40:00Z, outside resource TANKER-1 availability ending 2026-10-12T09:20:00Z"
+    ]
+  },
+  "candidateSchedule": null,
+  "explanation": "No feasible recovery option. 3 candidate(s) were rejected by hard constraints: use_alternate_resource:t-fuel:TANKER-2 [RESOURCE_RESERVED, OUTSIDE_AVAILABILITY_WINDOW, READINESS_UNCERTAIN]; use_alternate_resource:t-fuel:TANKER-3 [RESOURCE_RESERVED, OUTSIDE_AVAILABILITY_WINDOW, READINESS_UNCERTAIN]; wait:t-fuel:baseline [RESOURCE_UNAVAILABLE, OUTSIDE_AVAILABILITY_WINDOW, READINESS_UNCERTAIN]. No recovery is invented to fill the gap.",
+  "reviewerChoice": null,
+  "rejected": [
+    {
+      "candidateId": "use_alternate_resource:t-fuel:TANKER-2",
+      "reasonCodes": [
+        "RESOURCE_RESERVED",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "detail": "Requested window 2026-10-12T09:10:00Z-2026-10-12T09:30:00Z on TANKER-2 collides with existing commitment \"Committed for the whole window to synthetic turnaround TP-118\" (2026-10-12T09:00:00Z-2026-10-12T11:00:00Z)"
+    },
+    {
+      "candidateId": "use_alternate_resource:t-fuel:TANKER-3",
+      "reasonCodes": [
+        "RESOURCE_RESERVED",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "detail": "Requested window 2026-10-12T09:10:00Z-2026-10-12T09:30:00Z on TANKER-3 collides with existing commitment \"Committed for the whole window to synthetic turnaround TP-131\" (2026-10-12T09:00:00Z-2026-10-12T11:00:00Z)"
+    },
+    {
+      "candidateId": "wait:t-fuel:baseline",
+      "reasonCodes": [
+        "RESOURCE_UNAVAILABLE",
+        "OUTSIDE_AVAILABILITY_WINDOW",
+        "READINESS_UNCERTAIN"
+      ],
+      "detail": "Resource TANKER-1 is marked unavailable"
+    }
+  ],
+  "timestamps": {
+    "asOf": "2026-10-12T09:14:00Z",
+    "decisionCreatedAt": "2026-10-12T10:05:56Z"
+  },
+  "hashes": {
+    "snapshotHash": "5e083fce9380109d79b44b4d6c3d7291ea44caa79ec95af9f308cb407720fc80",
+    "evidence": [
+      {
+        "id": "ev-b-tanker1",
+        "contentHash": "09af18b9768c910df4b9b147b630a05eab78d23d0561530950ce4d51c33533d4"
+      },
+      {
+        "id": "ev-b-tanker2",
+        "contentHash": "e0076d88c8ce5682bba1e1e0645b33d431f14309a5d2ba1a34840e408053c897"
+      },
+      {
+        "id": "ev-b-tanker3",
+        "contentHash": "7d9012229731ec0e7a26c9fd38a81f4be377ad2d7999dcc6f6919cbf026de35c"
+      }
+    ]
+  },
+  "provenance": {
+    "dataProvenance": "Fully synthetic fixture. Fictitious station, flight, aircraft, and ground units. No live telemetry.",
+    "synthetic": true,
+    "advisoryOnly": true,
+    "operationalExecution": false
+  }
+}

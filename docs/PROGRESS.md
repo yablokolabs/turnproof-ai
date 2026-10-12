@@ -106,3 +106,16 @@ Failures: location sponsor investigation → cause: no official documentation co
 Unresolved assumptions: the README and evaluation document reference `proof/manifest.json` and `proof/packets/*.json`, which `npm run proof:export` creates and which do not exist until that command runs.
 Claim changes: `docs/BUILT_WITH.md` now lists ten verified tags and explicitly forbids claiming Anakin, Jev or any AI provider tag.
 One exact next action: run `npm run proof:export`, then commit and publish the repository publicly.
+
+## C6 — Proof manifest generated; first commit created
+
+Checkpoint ID / timestamp with timezone: C6, 2026-10-12.
+Milestone / branch / commit: M4 proof generation, on branch `master`, commit `e42e1e173b678f594a9ec760df7114e123b49581`.
+Implemented behavior: re-ran the full verification set on the frozen working tree, then created the repository's first commit and generated the proof bundle with `npm run proof:export`.
+Checks: `npm test` → 45 tests passed across 3 files, exit 0. `npm run typecheck` → exit 0. `npm run evaluate` → 34 scenarios decided, exit 0, rewritten `proof/results/evaluation.json`. `npm run test:e2e` → 6 tests passed, exit 0, screenshots refreshed. `npm run proof:export` → `proof/manifest.json` with 109 artefacts, 34 scenarios and 3 decision packets; bundle hash `faf546f1a42d7d7e886f55003402432c2feae598beb9303fa4d945f1cad173bf`, exit 0. The manifest records commit `e42e1e1` and `workingTreeDirty: true`, because the proof outputs it had just written were still uncommitted.
+Result: `proof/packets/case-a-packet.json` state `recommended`, `case-b-packet.json` state `no_feasible_option`, `case-c-packet.json` state `needs_review`.
+Correction to earlier checkpoints: C3 and C4 record "5 Playwright tests". The full `npm run test:e2e` run now includes the screenshot-capture spec in `tests/e2e/screenshots.spec.ts`, so the current count is 6: 5 behaviour flows plus 1 screenshot capture. `README.md`, `docs/EVALUATION.md` and `docs/DEVPOST_PROJECT_STORY.md` were corrected to match. The earlier entries are left as written because they were accurate for the runs they describe.
+Dirty files at checkpoint time: `proof/manifest.json`, `proof/packets/*.json`, `proof/results/evaluation.json`, `proof/screenshots/*.png`.
+Integration status: deterministic available; replay available and labelled; live AI, Anakin and Jev unavailable, none called.
+Failures: none in this step.
+One exact next action: commit the proof outputs, update the handoff, and publish the repository publicly with `gh repo create yablokolabs/turnproof-ai --public --source=. --push`.
