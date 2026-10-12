@@ -136,7 +136,7 @@ One exact next action: record the three-minute demo video from `docs/DEMO.md`, t
 
 Checkpoint ID / timestamp with timezone: C8, 2026-10-12.
 Milestone / branch / commit: M5 completion checks, branch `main`, parent commit `82bb0e6` plus the working-tree changes listed below.
-Implemented behavior: closed the two remaining gaps against `FREEBUFF_PROMPT.md` — the proof archive did not exist, and three commands printed in the README (`npm run seed`, `npm run dev`, `npm start`) had never been executed. Added `scripts/proof-zip.ts` and the `proof:zip` script.
+Implemented behavior: closed the two remaining gaps against the build prompt supplied at the start of the session (that file, and the session handoff note, were later deleted from the repository at the owner's request; see checkpoint C9) — the proof archive did not exist, and three commands printed in the README (`npm run seed`, `npm run dev`, `npm start`) had never been executed. Added `scripts/proof-zip.ts` and the `proof:zip` script.
 Checks: `npm run seed` → exit 0, "seeded 34 scenario(s) into .../apps/api/data/turnproof.sqlite", database file 393216 bytes. `npm run dev` → API `http://127.0.0.1:4181/api/health` returned 200 and Vite returned 200 on `http://127.0.0.1:5173/`. `npm start` (single origin, built UI served by the API) → `GET /` 200 `text/html` with title `TurnProof AI - synthetic turnaround recovery console`, `GET /some/deep/link` 200 (SPA fallback), `GET /api/health` 200 (API routing not shadowed). `npx tsx scripts/proof-zip.ts` → exit 0, 121 entries.
 Result: no `zip` binary is present on this host, so the archive is written by a store-only ZIP writer in `scripts/proof-zip.ts`. It was verified independently rather than self-reported: `python3 -c "import zipfile; z=zipfile.ZipFile('proof/turnproof-proof.zip'); print(len(z.namelist()), z.testzip())"` reported 121 entries and `None` for the CRC check, and Python's own sha256 of the file matches the value recorded in `proof/zip-manifest.json`. That record is kept outside the archive on purpose, because the archive contains this document, so a hash pinned inside it could never stay valid. The archive contains `proof/manifest.json`, the three decision packets, `proof/results/evaluation.json`, the three screenshots, `package-lock.json`, `README.md`, `turnproof-logo.png` and the full source tree.
 Correction: the archive was regenerated once after the last documentation edit so its contents match the committed tree. Any earlier byte count or hash printed while this checkpoint was being written is superseded by `proof/zip-manifest.json`, which is the single authoritative record.
@@ -145,3 +145,41 @@ Dirty files at checkpoint time: `package.json`, `scripts/proof-zip.ts`, `proof/t
 Integration status: unchanged. Deterministic available; replay available and labelled; live AI, Anakin and Jev unavailable, none called.
 Unresolved assumptions: the archive embeds `proof/manifest.json`, which records commit `e42e1e1` with `workingTreeDirty: true` because the proof outputs were uncommitted when it was generated. That is accurate for that capture and is not corrected retroactively.
 One exact next action: commit and push this checkpoint, then record the three-minute demo video from `docs/DEMO.md` and add its real link.
+
+## C9 — Diagrams generated and embedded; the demo video is recorded and narrated
+
+Checkpoint ID / timestamp with timezone: C9, 2026-10-12 (late session), branch `main`, working tree on top of `82bb0e6`.
+Milestone: M4 presentation layer and M5 demo artefact.
+
+Implemented behavior:
+
+1. `FREEBUFF_PROMPT.md` and `SESSION_CONTINUATION.md` deleted at the owner's request, with their references removed from `scripts/proof-export.ts`, `scripts/proof-zip.ts` and `docs/KIT_MANIFEST.json`.
+2. Three architecture diagrams authored as self-contained HTML with inline SVG under `docs/diagrams/`, then rasterised to committed PNGs and exported to standalone SVGs by `scripts/build-diagrams.ts` (`npm run diagrams:build`). The README's three Mermaid blocks were replaced by the PNGs, so the README now renders with no diagram runtime and no network fetch.
+3. `scripts/check-diagrams.ts` (`npm run diagrams:check`) re-measures the committed diagrams instead of trusting the build.
+4. `scripts/narrate-demo.ts` (`npm run demo:narrate`) synthesises one narration MP3 per beat with ElevenLabs and resolves the voice by scoring the account's voice list against the target. `scripts/record-demo.ts` was restructured to record **one Chromium segment per narration beat**, hold each to that beat's audio length, and mux the narration.
+
+Checks:
+
+- `npm run diagrams:build` → exit 0, 3 diagrams, both artifacts per diagram.
+- `npm run diagrams:check` → exit 0. Exact pixel sizes 2560x1440, 2560x2000, 2560x1520 (viewBox x 2); 0 text overlaps, 0 text outside the viewBox, 0 labels off their mask, 0 labels straddling a box edge, 0 insets under 6px, 0 diamond text overflows.
+- `python3 .agents/skills/diagram-design/scripts/self_check.py docs/diagrams/*.svg` → `OK` for all three; the exported SVGs carry no `rgba()`, and the inline diagram CSS travels inside the SVG.
+- `npm run demo:narrate` → exit 0. 7 beats, 2196 characters, `eleven_multilingual_v2`, 150.49 s of audio. Voice resolution printed all 23 account voices; the two top-ranked candidates for the target (Amelia and Annie, British young female, professional) were rejected with `402 paid_plan_required` because the account is on the free plan, and the walk landed on `Alice - Clear, Engaging Educator` (premade, female, British).
+- `npm run demo:video` → exit 0. One segment per beat, each landing within 0.11 s of its narration length (23.07→23.08, 19.67→19.68, 31.53→31.52, 21.58→21.56, 26.15→26.04). Final `proof/demo/turnproof-demo.mp4`: 1280x720, H.264 + AAC, 150.23 s, audio present.
+
+Result: the narrated video is real and was verified at the artifact rather than from the build log. `ffprobe` reports both streams (`h264` video 25 fps, `aac` mono 44100 Hz). `volumedetect` over the whole file reports mean -23.1 dB and peak -2.3 dB, so the narration is present and not silence. Sampled at t=3, 12, 30, 60, 90, 110, 130 and 148 s, every one-second window carries audio between -21.8 and -24.4 dB, and the frame means are light (#f1f2f6, #f0f1f6) on the title and end cards and dark (#282e34 to #2d3038) on the console screens, which is the expected shape.
+
+Failures found and fixed in this step:
+
+1. Location `docs/diagrams/decision-flow.html` and `docs/diagrams/review-sequence.html` → cause: `svg { min-width: 1000px }` against a 1280-wide viewBox let the frame shrink the SVG to 1216 CSS px, silently scaling the whole type ramp to 95 percent, which the diagram skill forbids → fix: set `min-width` equal to the viewBox width; the PNGs then measured exactly viewBox x 2.
+2. Location `docs/diagrams/architecture.html`, the `STATUS ONLY` label → cause: the text was centred on x=665 while its mask ran 636..695, so the glyph box started 0.13 px outside the mask → fix: widened the mask to 635..695 so it is centred on the text. The geometry check found this, and it is the reason the check compares every label to its own mask.
+3. Location `scripts/record-demo.ts` → cause: the first narrated run never exited, because the script had no explicit exit after the server was signalled → fix: `main().then(() => process.exit(0))`.
+
+Corrections to earlier checkpoints: C7 and C8 both record "no demo video exists", and C8's next action was to record one. That is superseded here: a narrated video now exists. It is 2:30, not the 3:00 the earlier shot list targeted, and it is machine-voiced rather than performed, so `docs/DEMO.md` was rewritten to state both facts instead of being deleted.
+
+Claim changes: `README.md` no longer says there is no recorded demo video, and it names the two new commands. Nothing anywhere claims a human presenter, a live provider, a sponsor integration or a measured real-world saving.
+
+Integration status: unchanged for the product. Deterministic available; replay available and labelled; live AI, Anakin and Jev unavailable, none called. Newly recorded: ElevenLabs text to speech, which is an external service and is now named as one. Its key was read from the environment for a single run and is not stored in the repository.
+
+Unresolved assumptions: the narration is beat-aligned, not frame-accurate. The voice is the closest this plan allows rather than the exact target. The video's spoken figures still carry every limit the fixtures carry. No independent reproduction of any of this has been performed, and nothing has been pushed.
+
+One exact next action: run the full verification set on the frozen tree (`npm test`, `npm run typecheck`, `npm run test:e2e`, `npm run evaluate`, `npm run proof:export`, `npm run proof:zip`), then commit and push so the public repository matches.

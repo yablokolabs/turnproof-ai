@@ -1,8 +1,8 @@
 {
   "summary": {
-    "measuredAt": "2026-10-12T10:04:55.428Z",
+    "measuredAt": "2026-10-12T11:01:06.313Z",
     "wallClockUsedForDecisionRecords": "2026-10-12T09:20:00Z",
-    "commit": "no-git-repository",
+    "commit": "5fb5a0aff47b9e4fceea5c24624b2c570dd87ec0",
     "solverVersion": "tp-solver-0.1.0+tp-0.1.0",
     "providerMode": "deterministic",
     "note": "All numbers are measured on committed synthetic fixtures with the rule-based engine. No live model provider was called, so no rule-only versus live-AI comparison is claimed. Durations, cost units and freshness budgets are invented fixture values, not aviation standards.",
@@ -48,9 +48,9 @@
       "totalProjectedRecoveryMin": 150
     },
     "latencyMs": {
-      "p50": 0.298,
-      "p95": 1.2,
-      "max": 3.053,
+      "p50": 0.201,
+      "p95": 1.112,
+      "max": 4.236,
       "method": "process.hrtime around decide() per fixture, single run, no warmup beyond module load"
     },
     "determinism": {
@@ -95,7 +95,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 3.053,
+      "latencyMs": 4.236,
       "expectedMatches": true
     },
     {
@@ -113,7 +113,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 2,
-      "latencyMs": 1.2,
+      "latencyMs": 0.894,
       "expectedMatches": true
     },
     {
@@ -131,7 +131,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.368,
+      "latencyMs": 0.585,
       "expectedMatches": true
     },
     {
@@ -149,7 +149,7 @@
       "citations": 2,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.562,
+      "latencyMs": 1.112,
       "expectedMatches": true
     },
     {
@@ -167,7 +167,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.456,
+      "latencyMs": 0.755,
       "expectedMatches": null
     },
     {
@@ -185,7 +185,7 @@
       "citations": 2,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.307,
+      "latencyMs": 0.559,
       "expectedMatches": null
     },
     {
@@ -203,7 +203,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 2,
-      "latencyMs": 0.23,
+      "latencyMs": 0.357,
       "expectedMatches": null
     },
     {
@@ -221,7 +221,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.356,
+      "latencyMs": 0.462,
       "expectedMatches": null
     },
     {
@@ -239,7 +239,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.311,
+      "latencyMs": 0.662,
       "expectedMatches": null
     },
     {
@@ -257,7 +257,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 1,
-      "latencyMs": 0.349,
+      "latencyMs": 0.229,
       "expectedMatches": null
     },
     {
@@ -275,7 +275,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 1,
-      "latencyMs": 0.28,
+      "latencyMs": 0.152,
       "expectedMatches": null
     },
     {
@@ -293,7 +293,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.279,
+      "latencyMs": 0.153,
       "expectedMatches": null
     },
     {
@@ -311,7 +311,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 1,
-      "latencyMs": 0.251,
+      "latencyMs": 0.175,
       "expectedMatches": null
     },
     {
@@ -329,7 +329,7 @@
       "citations": 2,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.259,
+      "latencyMs": 0.161,
       "expectedMatches": null
     },
     {
@@ -347,7 +347,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.416,
+      "latencyMs": 0.169,
       "expectedMatches": null
     },
     {
@@ -365,7 +365,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.406,
+      "latencyMs": 0.141,
       "expectedMatches": null
     },
     {
@@ -383,7 +383,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.348,
+      "latencyMs": 0.136,
       "expectedMatches": null
     },
     {
@@ -401,7 +401,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.313,
+      "latencyMs": 0.22,
       "expectedMatches": null
     },
     {
@@ -419,7 +419,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.615,
+      "latencyMs": 0.236,
       "expectedMatches": null
     },
     {
@@ -437,7 +437,7 @@
       "citations": 1,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.15,
+      "latencyMs": 0.241,
       "expectedMatches": null
     },
     {
@@ -455,7 +455,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.33,
+      "latencyMs": 0.265,
       "expectedMatches": null
     },
     {
@@ -473,7 +473,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.28,
+      "latencyMs": 0.241,
       "expectedMatches": null
     },
     {
@@ -491,7 +491,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.298,
+      "latencyMs": 0.24,
       "expectedMatches": null
     },
     {
@@ -509,7 +509,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.285,
+      "latencyMs": 0.231,
       "expectedMatches": null
     },
     {
@@ -527,7 +527,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.233,
+      "latencyMs": 0.184,
       "expectedMatches": null
     },
     {
@@ -545,7 +545,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.204,
+      "latencyMs": 0.201,
       "expectedMatches": null
     },
     {
@@ -563,7 +563,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.199,
+      "latencyMs": 0.181,
       "expectedMatches": null
     },
     {
@@ -581,7 +581,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.205,
+      "latencyMs": 0.179,
       "expectedMatches": null
     },
     {
@@ -599,7 +599,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.226,
+      "latencyMs": 0.176,
       "expectedMatches": null
     },
     {
@@ -617,7 +617,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.292,
+      "latencyMs": 0.183,
       "expectedMatches": null
     },
     {
@@ -635,7 +635,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.243,
+      "latencyMs": 0.131,
       "expectedMatches": null
     },
     {
@@ -653,7 +653,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.969,
+      "latencyMs": 0.143,
       "expectedMatches": null
     },
     {
@@ -671,7 +671,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.828,
+      "latencyMs": 0.122,
       "expectedMatches": null
     },
     {
@@ -689,7 +689,7 @@
       "citations": 0,
       "unresolvedCitations": [],
       "uncertainties": 0,
-      "latencyMs": 0.222,
+      "latencyMs": 0.12,
       "expectedMatches": null
     }
   ]

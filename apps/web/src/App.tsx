@@ -101,8 +101,23 @@ export function App() {
 
   return (
     <div className="app">
-      <h1>TurnProof AI</h1>
-      <p className="muted">Recover the turnaround. Show the evidence.</p>
+      <header className="app-header">
+        {/*
+          The wordmark is dark ink on a transparent background, so it is placed
+          on a light brand plate. On the dark console it would otherwise be
+          almost invisible.
+        */}
+        <h1 className="brand-plate">
+          <img
+            className="app-logo"
+            src="/turnproof-logo.png"
+            alt="TurnProof AI"
+            width={252}
+            height={84}
+          />
+        </h1>
+        <p className="muted">Recover the turnaround. Show the evidence.</p>
+      </header>
 
       <Banner provider={provider} adapters={adapters} />
 

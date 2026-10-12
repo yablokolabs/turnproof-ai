@@ -4,6 +4,10 @@ An airport turnaround coordinator has to reconcile ground-service updates from s
 
 The need is a hypothesis. No practitioner interview has been conducted, and this project does not claim one.
 
+# Demo video
+
+`proof/demo/turnproof-demo.mp4` (2 minutes 30 seconds, 1280x720, committed in the repository). It is a scripted Playwright session recorded from the running application, with synthetic ElevenLabs text-to-speech narration over it. It is not a person on camera, the voice is not a human presenter, and the narration is aligned per demo beat rather than frame by frame. No live model, no sponsor and nothing outside loopback appears in it.
+
 # What it does
 
 TurnProof AI is a single-station, single-turnaround advisory board. It converts timestamped synthetic service updates into a task dependency timeline, computes the projected readiness time, gates every recovery candidate against hard constraints before any ranking, and produces an evidence-linked decision packet for human review.
@@ -30,7 +34,7 @@ Verification in this repository, all run locally with no credentials:
 4. `npm run evaluate` decides 34 committed synthetic fixtures and writes `proof/results/evaluation.json`.
 5. `npm run proof:export` writes `proof/manifest.json` with a SHA-256 per artefact and exports the three decision packets by driving the real HTTP API.
 
-Measured over those 34 fixtures: 27 recommended, 3 abstained on contradictory evidence, 4 reported no feasible option; 20 candidate hard-constraint rejections; abstention correct on 2 of 2 conflicting-evidence scenarios and 4 of 4 no-feasible scenarios; 16 evidence ids cited with 0 unresolved; projected recovery totalling 150 minutes across 27 scenarios with a comparable baseline, of which 10 were strictly better than waiting, 17 equal and 0 worse; solver latency p50 0.269 ms and p95 1.887 ms. All four hand-derived hero oracles match. A rerun produces identical decision ids and snapshot hashes.
+Measured over those 34 fixtures: 27 recommended, 3 abstained on contradictory evidence, 4 reported no feasible option; 20 candidate hard-constraint rejections; abstention correct on 2 of 2 conflicting-evidence scenarios and 4 of 4 no-feasible scenarios; 16 evidence ids cited with 0 unresolved; projected recovery totalling 150 minutes across 27 scenarios with a comparable baseline, of which 10 were strictly better than waiting, 17 equal and 0 worse; solver latency p50 0.201 ms and p95 1.112 ms (solver runtime, which varies by run). All four hand-derived hero oracles match. A rerun produces identical decision ids and snapshot hashes.
 
 Integration status is reported as it is. The deterministic provider is implemented and available. Replay is implemented from stored decisions in local SQLite and is always labelled as a replay. The live AI provider is unimplemented and reports itself unavailable, so there is no rule-only versus live-AI comparison to report. Anakin and Jev are unavailable: no contract was verified and no call was made, so neither is claimed as used.
 

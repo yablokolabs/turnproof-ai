@@ -1,18 +1,18 @@
 {
   "manifestVersion": "1.0.0",
-  "capturedAt": "2026-10-12T10:12:04.624Z",
+  "capturedAt": "2026-10-12T11:02:45.981Z",
   "capturedAtNote": "Capture timestamp is when this command ran. It is not an evidence-lock timestamp.",
-  "commit": "3d9093ea82d059bb98b983701e913467047046c6",
+  "commit": "5fb5a0aff47b9e4fceea5c24624b2c570dd87ec0",
   "workingTreeDirty": true,
   "environment": {
     "node": "v22.23.2",
     "platform": "linux x64",
     "packageManager": "npm workspaces"
   },
-  "bundleHash": "7eb4994d3bf644ac6a4d9483316af6b0b51c368acddb6f5d10bc28b706b15d71",
+  "bundleHash": "8a32970ce5c93ddd612d9ffb344379b45f4db809af0d1d55393e1e721d6911bf",
   "bundleHashMethod": "sha256 of the sorted \"path:sha256\" lines below",
   "counts": {
-    "artefacts": 110,
+    "artefacts": 125,
     "scenarios": 34,
     "packets": 3
   },
@@ -44,7 +44,7 @@
   ],
   "evaluation": {
     "path": "proof/results/evaluation.json",
-    "sha256": "9bbd68eccf87480b56c1c640757f76ea4afde19b66310d05ae68d329145aba81"
+    "sha256": "249d5e406c67f11183585b16418eb67df89f9b05a37b2bbffa7237b540a7eb46"
   },
   "packets": [
     {
@@ -52,21 +52,21 @@
       "path": "proof/packets/case-a-packet.json",
       "scenarioId": "case-a",
       "decisionState": "recommended",
-      "hash": "a41d9175f0f41b30348d1d5c2d302bd879f71d6c79494150a0ea76fb1c1ba221"
+      "hash": "0a7e1e976d69f51e721865e44b2606618bc33795b7cba0341c76fda5edda6de9"
     },
     {
       "name": "case-b-packet.json",
       "path": "proof/packets/case-b-packet.json",
       "scenarioId": "case-b",
       "decisionState": "no_feasible_option",
-      "hash": "8492be94195ea3481be743f7675b5786d9dfe724022c12a20265a32fb8962fee"
+      "hash": "0879848bebf2235e2821ae53ace4d09f8365f927bae2e969c0c7b18fa2c09f29"
     },
     {
       "name": "case-c-packet.json",
       "path": "proof/packets/case-c-packet.json",
       "scenarioId": "case-c",
       "decisionState": "needs_review",
-      "hash": "c5f8e18e9423ac1b29f276adce55e8fd97804f91d44a9bd962e0faef6a141915"
+      "hash": "7bc539f7f49902db2f5aebf5450a3544ce23b67c6657e84121e5c88e1b2ba4a5"
     }
   ],
   "artefacts": [
@@ -82,13 +82,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7696,
-      "sha256": "ad6c50d3d047b6555a2ffce4d92dfa801ffcb6e99c33bf22c2a179132876bbc7"
-    },
-    {
-      "path": "SESSION_CONTINUATION.md",
-      "bytes": 3395,
-      "sha256": "af2b0ca06d0c9841c6a83ef0a755bc677b2c2c8c9502bd2004e4a5dee6f13da1"
+      "bytes": 11342,
+      "sha256": "00354ad2a69352cc15f39a945268784e41f86436bdc9ebc7e57534984c5ee47d"
     },
     {
       "path": "apps/api/package.json",
@@ -151,9 +146,19 @@
       "sha256": "10fcf9194dcaef1fecbf20b8ac0f435f43a448347d7d3d52b3bad667fe4e6a9c"
     },
     {
+      "path": "apps/web/public/turnproof-icon.png",
+      "bytes": 1158320,
+      "sha256": "078afe7aa98ee12bf00c5aad539e4e85c3885d7ac361e6663372631dabbc8872"
+    },
+    {
+      "path": "apps/web/public/turnproof-logo.png",
+      "bytes": 466551,
+      "sha256": "86c8f9b13f1766a0bd81e20a7245f4aa8977b849dd3c44efe980b58464a62357"
+    },
+    {
       "path": "apps/web/src/App.tsx",
-      "bytes": 7540,
-      "sha256": "acc2ad6307c79c3caee8f5910412308ac7f9e20f5cf766c8f399aae1a388d308"
+      "bytes": 8005,
+      "sha256": "1a28323ff290f71c27eaa6ef418ac6746f14380279dc10d324ba0c295cbb7334"
     },
     {
       "path": "apps/web/src/api/client.ts",
@@ -207,8 +212,8 @@
     },
     {
       "path": "apps/web/src/styles.css",
-      "bytes": 6740,
-      "sha256": "a1747b70d998702b7d35f259390a724ab770c6fba134f169ca27b734ea2d928c"
+      "bytes": 7188,
+      "sha256": "2555ca8bed1db55ad3ddde90094919ba74d949aa0239de367e76d459df91f170"
     },
     {
       "path": "apps/web/src/types.ts",
@@ -227,8 +232,8 @@
     },
     {
       "path": "docs/BUILT_WITH.md",
-      "bytes": 3344,
-      "sha256": "69f66818d18c31336c5fd09dcee553b7892c71e0eb78621be291e0698c531652"
+      "bytes": 4785,
+      "sha256": "8460e4db2d4d2d2fe4e7dec2650cd2fd70f4dc9497db2e5b7ad7e19ba6b78e09"
     },
     {
       "path": "docs/COMPETITION_NOTES.md",
@@ -242,18 +247,18 @@
     },
     {
       "path": "docs/DEMO.md",
-      "bytes": 5267,
-      "sha256": "237c64badcfcd97515bc91a1625b9f6ebf72f194d587d5e098b63e3b5d1afaaf"
+      "bytes": 7414,
+      "sha256": "913b2aeb7c6a7c4bcd96218a0e136cc83e475a9a9a40ec4a1c4a6f59be0053e8"
     },
     {
       "path": "docs/DEVPOST_PROJECT_STORY.md",
-      "bytes": 9316,
-      "sha256": "938db2d34033536b82a4756b6482885e0022cbd7fb4d384c169352f594e9c9c0"
+      "bytes": 9806,
+      "sha256": "032f20b58ac0a89d5df021e7bb2aa9c8ce24de4a7acd844db19c49420051294b"
     },
     {
       "path": "docs/EVALUATION.md",
-      "bytes": 8662,
-      "sha256": "fe0682a729d3ff09a82faccc5aea8ecbb66b3c33e5ca1798af5b3f005773596d"
+      "bytes": 9388,
+      "sha256": "5a68b90ab280e117d21d659355997c665a5575ece466544121ae8429177c9ded"
     },
     {
       "path": "docs/INTEGRATIONS.md",
@@ -262,8 +267,8 @@
     },
     {
       "path": "docs/KIT_MANIFEST.json",
-      "bytes": 1835,
-      "sha256": "4df63b6562e6c9cda202af90509030382153e8dba232744be527678319a1d814"
+      "bytes": 2502,
+      "sha256": "cf4b9420a3156e60f220c625efed26c3bd3427275dc37f080bfcf1a1e92a83c6"
     },
     {
       "path": "docs/PILOT.md",
@@ -272,8 +277,58 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 18713,
-      "sha256": "77c5a1d76034c4de965c1364b4d938e0d7579a096ddcf889e26f5791bbdf3b07"
+      "bytes": 24469,
+      "sha256": "6249b7057efe9fb339a379c9f5bd534b44dd036ddbac7568c4a4a0875dfa0d28"
+    },
+    {
+      "path": "docs/demo-narration.json",
+      "bytes": 3688,
+      "sha256": "729319ade231cca1fb0d857a6f5d522fcbd43c9f93331f6cf38fe3ec02b7554d"
+    },
+    {
+      "path": "docs/diagrams/architecture.html",
+      "bytes": 8697,
+      "sha256": "e3dc9abc16ebd8519ae30b5d1c0f4fb9c04c68c89852cc05c40347d7618ea8a6"
+    },
+    {
+      "path": "docs/diagrams/architecture.png",
+      "bytes": 109498,
+      "sha256": "c012c5904f4a3d33e7eb5bb0d1f293f4a624dd40add336a40447d219fd3b5ccd"
+    },
+    {
+      "path": "docs/diagrams/architecture.svg",
+      "bytes": 8896,
+      "sha256": "d156d0236dd1f4a0fa75891c0b9706b508ce0846f9bbc898066c345d9df463d6"
+    },
+    {
+      "path": "docs/diagrams/decision-flow.html",
+      "bytes": 7753,
+      "sha256": "9832d9401ea3337bdf62036b23f69dc35166dee1f628b2cb2108de69bb733d09"
+    },
+    {
+      "path": "docs/diagrams/decision-flow.png",
+      "bytes": 202754,
+      "sha256": "325b6ec975209a7e5e203421d6cc6e2807fcfb354cbff0256099cf275b509c69"
+    },
+    {
+      "path": "docs/diagrams/decision-flow.svg",
+      "bytes": 8059,
+      "sha256": "531de2784f0d1106c048ce082188feb93fc67156a5397221d64a2eb073a270bb"
+    },
+    {
+      "path": "docs/diagrams/review-sequence.html",
+      "bytes": 9216,
+      "sha256": "d462f4435ce7907ded6ab022a78417fada3dc144b689b410f95edcf05ee5b463"
+    },
+    {
+      "path": "docs/diagrams/review-sequence.png",
+      "bytes": 110640,
+      "sha256": "903e24a7d92b186cc9a4d71e5d5d385b54d11cc59cbd3f164d3c262f46859735"
+    },
+    {
+      "path": "docs/diagrams/review-sequence.svg",
+      "bytes": 9685,
+      "sha256": "d0b56efea2282630a7a449174e076df09974fdb47fd5843b6fad147aa73b4982"
     },
     {
       "path": "fixtures/loader.ts",
@@ -462,8 +517,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 1358,
-      "sha256": "5f8e567ffe4cc9a0cd8b0489f45bda7e5a519aa461aec0bfcc429eb99c0c417a"
+      "bytes": 1620,
+      "sha256": "6af46b8107aa648c8124ca53f2f4863d5b70739fa423ee4e6d1a7e17ae54e0f6"
     },
     {
       "path": "packages/adapters/package.json",
@@ -546,9 +601,19 @@
       "sha256": "3f916e9b609efb19837a0312d15f0a6dfc02ac45a979fff404c7a29b30f5567a"
     },
     {
+      "path": "scripts/build-diagrams.ts",
+      "bytes": 3520,
+      "sha256": "439b148bdba3df6d7c91d55979b3fe1135c99c79f364394f409c31b6eeb39706"
+    },
+    {
       "path": "scripts/build-fixtures.ts",
       "bytes": 1152,
       "sha256": "8151e2aad5dd22b9599db485859e789fd725b07012363fa9df57a5d1e082f274"
+    },
+    {
+      "path": "scripts/check-diagrams.ts",
+      "bytes": 5701,
+      "sha256": "614af03cb390ce6b4426a2b64ba015c6c955e09d1a4228b96760dbcd54fdac62"
     },
     {
       "path": "scripts/dev.mjs",
@@ -566,14 +631,24 @@
       "sha256": "b98fb49923d1fd3009647099a4b6203b1c30731fb8424c5004154b19dc7e5191"
     },
     {
+      "path": "scripts/narrate-demo.ts",
+      "bytes": 13808,
+      "sha256": "dad6e6809abc3bace8ffcee6c5e0768c5abdbcc901095deab4ff84e219c8d160"
+    },
+    {
       "path": "scripts/proof-export.ts",
-      "bytes": 8027,
-      "sha256": "2282ec54ccd9d5b7c865d1d97a9abc817a97a394ba16571d908b4d589f6b77f7"
+      "bytes": 8275,
+      "sha256": "dca3f62b40a1196ccaa31c2098f187de61e8a59514018168175e11cf32ef48c6"
     },
     {
       "path": "scripts/proof-zip.ts",
-      "bytes": 7197,
-      "sha256": "0e0ca3b80e70703fd752a3f398e97c035960a186b5e163e841cdd4cdde79a541"
+      "bytes": 7563,
+      "sha256": "174c05b4e83b46b4372b6b63b3eb0907f752a4406b3550ff60f51c6a21b8fd15"
+    },
+    {
+      "path": "scripts/record-demo.ts",
+      "bytes": 21231,
+      "sha256": "e0cd1919d6d8f5ee8641906da9e62f71db701c2e194ae44c265b3489f8a0d415"
     },
     {
       "path": "scripts/seed.ts",
@@ -625,6 +700,7 @@
     "Synthetic fixtures only; no airport, airline or sponsor system was contacted.",
     "Deterministic rule-based mode. Live AI extraction and live ranking are unimplemented.",
     "Anakin and Jev adapters are unavailable; no sponsor call was made.",
+    "The demo video and its narration are generated artefacts outside this artefact list; their own manifests, proof/demo/demo-manifest.json and proof/demo/narration-manifest.json, carry their hashes. The narration step is the only one that contacts a third party.",
     "A hash detects byte changes. It does not establish source truth or tamper-resistant storage."
   ]
 }

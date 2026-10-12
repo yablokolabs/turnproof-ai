@@ -15,14 +15,19 @@
       "docs/PILOT.md",
       "docs/DECISIONS.md",
       "docs/DEMO.md"
-    ]
+    ],
+    "filesRemovedSinceThisSnapshot": {
+      "note": "Two working documents from the received kit were deleted from the repository at the owner's request. They were process scaffolding rather than product documentation: one was the build prompt, the other the session handoff note. Their received hashes are preserved here so this file still describes the kit exactly as it arrived. Checkpoints C1 to C7 in docs/PROGRESS.md were written while those files existed, so they record facts and file names from that period; the two entries are left as written rather than rewritten, for the same reason the earlier checkpoints are.",
+      "files": {
+        "FREEBUFF_PROMPT.md": "c3e4a7346bc87732ed7860d23c363cbd2af1cfba89f14715c1dffe2a2e66097b",
+        "SESSION_CONTINUATION.md": "7a7dcb50a04a5a5228ee19f5d3b8d2b8c935334da756be0eef2a1aa9c71c589b"
+      }
+    }
   },
   "files": {
     "AGENTS.md": "b615c29780e8a49a9a2c1d3af33bf02ae8bcf4759bd007057c086b2fdb7b7f46",
-    "FREEBUFF_PROMPT.md": "c3e4a7346bc87732ed7860d23c363cbd2af1cfba89f14715c1dffe2a2e66097b",
     "PROJECT_BUILD.md": "e6ff7268521d0990d5323a3227e9a3ceb65e856f941fe09765ce7bcaa583146a",
     "README.md": "f991a4dd6819fbed9cb3999b0489fea7bf27f2a02f3ee1e35d36f3ae2b2eabfe",
-    "SESSION_CONTINUATION.md": "7a7dcb50a04a5a5228ee19f5d3b8d2b8c935334da756be0eef2a1aa9c71c589b",
     "docs/BUILT_WITH.md": "87cd0da9991927d1ef9148ef7f9e531f5bb189775cb3df394cdb937463539ef7",
     "docs/COMPETITION_NOTES.md": "835a2d8335d9e92e504bef2daff2d03c628364d1dc1c2519b87355b6b8c16a64",
     "docs/COMPETITION_SOURCE.txt": "3a3de37f28af0607e654bc1aa372fcb3af3796ab821e3114973fff390878aa64",

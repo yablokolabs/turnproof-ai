@@ -6,6 +6,10 @@ dist/
 .env.*
 !.env.example
 proof/local/
+# Installed agent skills are re-installed on demand and their provenance is
+# pinned in skills-lock.json, the same way node_modules is pinned by the lockfile.
+.agents/
+.claude/
 apps/api/data/
 apps/web/dist/
 test-results/

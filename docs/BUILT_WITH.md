@@ -13,7 +13,7 @@ Ten tags are supported by the lockfile and by source imports in this repository.
 | `zod` | `zod` in root, `packages/domain/package.json` and `apps/api/package.json`; every contract in `packages/domain/src/schemas.ts` and every request body validated in `apps/api/src/app.ts` |
 | `sqlite` | the built-in `node:sqlite` module, loaded in `apps/api/src/storage/db.ts`; seven tables created there and used by `apps/api/src/storage/repository.ts` |
 | `vitest` | `vitest` in root `package.json`; `vitest.config.ts`; 45 passing tests in `tests/domain/` and `tests/api/` |
-| `playwright` | `@playwright/test` in root `package.json`; `playwright.config.ts`; 5 passing browser tests and the screenshot capture in `tests/e2e/` |
+| `playwright` | `@playwright/test` in root `package.json`; `playwright.config.ts`; 6 passing browser checks in `tests/e2e/` (5 behaviour flows plus 1 screenshot capture) |
 | `node.js` | `engines.node >= 22.5.0` in root `package.json`; run verified on Node v22.23.2; `node:sqlite` and `node:crypto` are Node built-ins |
 | `css` | `apps/web/src/styles.css`, the only stylesheet, imported by the app shell |
 
@@ -36,4 +36,15 @@ Ten tags are supported by the lockfile and by source imports in this repository.
 
 `typescript`, `react`, `vite`, `fastify`, `zod`, `sqlite`, `vitest`, `playwright`, `node.js`, `css`.
 
-**Evidence:** the `package.json` files at the root, `packages/domain`, `packages/adapters`, `apps/api` and `apps/web`, plus the lockfile and the source imports listed in the table above. No live-call record exists for any external service, so no external-service tag is listed.
+**Evidence:** the `package.json` files at the root, `packages/domain`, `packages/adapters`, `apps/api` and `apps/web`, plus the lockfile and the source imports listed in the table above.
+
+## External services: called at build time, not part of the product
+
+Two third parties were used to produce artefacts, and neither is a runtime dependency of the product. Both are recorded here so that no claim about them has to be inferred.
+
+| Service | What was actually done | Recorded in |
+| --- | --- | --- |
+| ElevenLabs | `npm run demo:narrate` called `GET /v1/voices` and `POST /v1/text-to-speech/{voice_id}` once, on 2026-10-12, to synthesise 7 narration beats for the demo video. The account is on the free plan, so the two top-ranked voices for the requested target were rejected with `402 paid_plan_required` and the run fell back to `Alice`. | `proof/demo/narration-manifest.json` |
+| `diagram-design` (community skill from `cathrynlavery/diagram-design`) | Its design system, its export procedure and its `export_svg.py` produced `docs/diagrams/*.svg`. Its style-guide brand tokens were replaced with tokens sampled from this project's own logo and console, and that substitution is disclosed in each diagram's source comment. | `docs/diagrams/*.html`, `.agents/skills/diagram-design/` |
+
+Neither is listed as a Built With tag: the product runs with neither present, and an ElevenLabs tag would misdescribe a text-to-speech step that only narrates the demo video. Conversely, no document may any longer claim that no external call was ever made - that claim is superseded by the two above, which are calls to build-time tooling and not to any airline, handler, sponsor or sponsor-adjacent system.

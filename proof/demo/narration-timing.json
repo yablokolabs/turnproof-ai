@@ -1,0 +1,32 @@
+{
+  "beats": [
+    {
+      "id": "title",
+      "durationSeconds": 5.094
+    },
+    {
+      "id": "beat-1",
+      "durationSeconds": 23.066
+    },
+    {
+      "id": "beat-2",
+      "durationSeconds": 19.67
+    },
+    {
+      "id": "beat-3",
+      "durationSeconds": 31.53
+    },
+    {
+      "id": "beat-4",
+      "durationSeconds": 21.577
+    },
+    {
+      "id": "beat-5",
+      "durationSeconds": 26.149
+    },
+    {
+      "id": "end",
+      "durationSeconds": 23.406
+    }
+  ]
+}

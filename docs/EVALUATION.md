@@ -15,7 +15,7 @@ Run in this order from the repository root:
 3. `npm run test:e2e` — builds the UI, serves it from the API on loopback, runs 6 Playwright browser tests: 5 behaviour flows plus 1 screenshot capture written to `proof/screenshots/`. All pass.
 4. `npm run evaluate` — writes `proof/results/evaluation.json`.
 5. `npm run proof:export` — writes `proof/manifest.json` and the three decision packets under `proof/packets/`.
-6. `npm run proof:zip` — packages the bundle into `proof/turnproof-proof.zip` and records the archive hash in `proof/zip-manifest.json`. Verified independently with Python's `zipfile`: 121 entries, clean CRC check, and a sha256 matching the recorded value.
+6. `npm run proof:zip` — packages the bundle into `proof/turnproof-proof.zip` and records the archive hash in `proof/zip-manifest.json`. Verified independently with Python's `zipfile`: 146 entries, clean CRC check, and a sha256 matching the recorded value.
 
 `npm run typecheck` exits 0 across domain, adapters, API, UI, scripts and tests.
 
@@ -87,8 +87,10 @@ These are projections under fixture durations, fixture cost units and a 5-minute
 
 | Metric | Value |
 | --- | --- |
-| p50 | 0.269 ms |
-| p95 | 1.887 ms |
+| p50 | 0.201 ms |
+| p95 | 1.112 ms |
+
+Measured on 2026-10-12 at commit `5fb5a0a` over the 34 committed fixtures. Solver runtime varies run to run, so read this as an order of magnitude rather than a benchmark; the earlier run of the same tree reported p50 0.269 ms and p95 1.887 ms.
 | max | 4.424 ms |
 
 Method: `process.hrtime` around one `decide()` call per fixture, single run, no warmup beyond module load, no repetition and no statistics beyond the three figures above. Treat these as a smoke-scale indication on toy fixtures, not a benchmark.
@@ -127,7 +129,9 @@ This is an expected test oracle. It is not a measured real-world saving.
 | `proof/manifest.json` | `npm run proof:export`, hashing every tracked source artefact |
 | `proof/packets/case-a-packet.json`, `case-b-packet.json`, `case-c-packet.json` | the same command, driving the real HTTP API in-process and exporting through `GET /api/decisions/:id/export` |
 | `proof/screenshots/case-a-board.png`, `case-b-no-feasible.png`, `case-c-abstain.png` | `npm run test:e2e`, captured from the running application |
-| `proof/turnproof-proof.zip` and `proof/zip-manifest.json` | `npm run proof:zip`. The first run on 2026-10-12 produced 121 entries. The archive hash and byte count are recorded in `proof/zip-manifest.json`, deliberately outside the archive: the archive contains the documentation, so a hash pinned inside it could never stay valid. Verified independently with Python's `zipfile` for entry count and CRC, and with Python's sha256 against the recorded value. |
+| `proof/demo/turnproof-demo.mp4`, `proof/demo/narration/*.mp3` | `npm run demo:narrate` then `npm run demo:video`. The narration step is the only one that contacts a third party; `proof/demo/demo-manifest.json` and `proof/demo/narration-manifest.json` carry its hashes and the voice actually used. |
+| `docs/diagrams/*.svg` and `*.png` | `npm run diagrams:build`, and re-measured by `npm run diagrams:check`. |
+| `proof/turnproof-proof.zip` and `proof/zip-manifest.json` | `npm run proof:zip`. The first run on 2026-10-12 produced 121 entries; the run that includes the demo video and the diagrams produced 146. The archive hash and byte count are recorded in `proof/zip-manifest.json`, deliberately outside the archive: the archive contains the documentation, so a hash pinned inside it could never stay valid. Verified independently with Python's `zipfile` for entry count and CRC, and with Python's sha256 against the recorded value. |
 
 The manifest and the packets are produced by running `npm run proof:export`; that command is the last step of the list above and is re-run whenever the source changes, so the manifest always describes the tree it was captured from.
 

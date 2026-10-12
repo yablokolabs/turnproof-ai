@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurnProof AI architecture</title>
+  <!-- Font source: system. No Google Fonts request, so the rasterised PNG and
+       the exported SVG render identically offline. Tokens are derived from this
+       project's own brand assets (the wordmark's navy ink, the console's light
+       plate, the teal rule) rather than the skill's shipped default skin. -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; min-height: 100vh; display: flex; align-items: center;
+           justify-content: center; padding: 2rem; }
+    .frame { max-width: 1280px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { width: 100%; min-width: 1280px; display: block; }
+    @media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="diagram-container">
+      <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-labelledby="architecture-title architecture-desc">
+        <title id="architecture-title">TurnProof AI architecture</title>
+        <desc id="architecture-desc">Three tiers: the React console in the browser, a loopback Fastify API with SQLite and the adapter status, and the packages/domain engine that holds every scheduling and feasibility rule.</desc>
+        <defs>
+          <style>
+            .eyebrow { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; font-weight: 500; letter-spacing: 0.14em; fill: #5b7286; }
+            .zone    { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; font-weight: 500; letter-spacing: 0.14em; fill: #5b7286; }
+            .title   { font-family: 'Instrument Serif', 'Noto Serif', Georgia, serif; font-size: 22px; fill: #0b2233; }
+            .name    { font-family: 'Geist', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #0b2233; }
+            .sub     { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+            .lbl     { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.06em; fill: #40566b; }
+            .legend  { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+          </style>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#40566b"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0b6f8f"/></marker>
+          <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1f4f9c"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f7fa"/>
+
+        <text class="eyebrow" x="48" y="50">ARCHITECTURE · TURNPROOF AI</text>
+        <text class="title" x="48" y="82">One board, one engine, one stored decision</text>
+
+        <!-- Zones: bg, then zones, then arrows, then nodes -->
+        <rect x="48" y="120" width="248" height="320" rx="8" fill="rgba(11,34,51,0.02)" stroke="rgba(11,34,51,0.10)" stroke-width="0.8"/>
+        <rect x="336" y="120" width="400" height="320" rx="8" fill="rgba(11,34,51,0.02)" stroke="rgba(11,34,51,0.10)" stroke-width="0.8"/>
+        <rect x="776" y="120" width="456" height="320" rx="8" fill="rgba(11,34,51,0.02)" stroke="rgba(11,34,51,0.10)" stroke-width="0.8"/>
+        <rect x="60" y="124" width="76" height="14" rx="2" fill="#f5f7fa"/>
+        <text class="zone" x="98" y="134" text-anchor="middle">BROWSER</text>
+        <rect x="348" y="124" width="68" height="14" rx="2" fill="#f5f7fa"/>
+        <text class="zone" x="382" y="134" text-anchor="middle">SERVER</text>
+        <rect x="788" y="124" width="64" height="14" rx="2" fill="#f5f7fa"/>
+        <text class="zone" x="820" y="134" text-anchor="middle">CORE</text>
+
+        <!-- Arrows and their label masks, drawn before the nodes -->
+        <path d="M 272,226 H 360" fill="none" stroke="#1f4f9c" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+        <rect x="274" y="208" width="84" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="316" y="217" text-anchor="middle">JSON OVER /API</text>
+
+        <path d="M 712,226 H 800" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="734" y="208" width="44" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="756" y="217" text-anchor="middle">DECIDE</text>
+
+        <path d="M 444,262 V 330" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="452" y="290" width="74" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="489" y="299" text-anchor="middle">READ / WRITE</text>
+
+        <path d="M 628,262 V 330" fill="none" stroke="#40566b" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <rect x="635" y="290" width="60" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="665" y="299" text-anchor="middle">STATUS ONLY</text>
+
+        <path d="M 900,330 V 262" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="908" y="290" width="88" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="952" y="299" text-anchor="middle">LOADED AT START</text>
+
+        <!-- Nodes -->
+        <rect x="72" y="190" width="200" height="72" rx="6" fill="rgba(64,86,107,0.10)" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="88" y="217">TurnProof console</text>
+        <text class="sub" x="88" y="237">React 18 + Vite</text>
+
+        <rect x="360" y="190" width="352" height="72" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="name" x="376" y="217">Fastify API</text>
+        <text class="sub" x="376" y="237">loopback · Zod validation</text>
+
+        <rect x="800" y="190" width="408" height="72" rx="6" fill="rgba(11,111,143,0.08)" stroke="#0b6f8f" stroke-width="1.2"/>
+        <text class="name" x="816" y="217">packages/domain</text>
+        <text class="sub" x="816" y="237">normalize · schedule · validate · explain</text>
+
+        <rect x="360" y="330" width="168" height="72" rx="6" fill="rgba(11,34,51,0.05)" stroke="#40566b" stroke-width="1"/>
+        <text class="name" x="376" y="357">SQLite</text>
+        <text class="sub" x="376" y="377">node:sqlite · 7 tables</text>
+
+        <rect x="544" y="330" width="168" height="72" rx="6" fill="rgba(11,34,51,0.02)" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text class="name" x="560" y="357">Adapters</text>
+        <text class="sub" x="560" y="377">provider + sponsor</text>
+
+        <rect x="800" y="330" width="200" height="72" rx="6" fill="rgba(64,86,107,0.10)" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="816" y="357">fixtures</text>
+        <text class="sub" x="816" y="377">34 scenarios + policy</text>
+
+        <!-- Legend: horizontal bottom strip -->
+        <line x1="48" y1="630" x2="1232" y2="630" stroke="rgba(11,34,51,0.12)" stroke-width="1"/>
+
+        <rect x="48" y="648" width="12" height="12" rx="2" fill="rgba(11,111,143,0.08)" stroke="#0b6f8f" stroke-width="1"/>
+        <text class="legend" x="68" y="658">focal engine</text>
+
+        <rect x="163" y="648" width="12" height="12" rx="2" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="legend" x="183" y="658">service</text>
+
+        <rect x="250" y="648" width="12" height="12" rx="2" fill="rgba(11,34,51,0.05)" stroke="#40566b" stroke-width="1"/>
+        <text class="legend" x="270" y="658">stored state</text>
+
+        <rect x="365" y="648" width="12" height="12" rx="2" fill="rgba(64,86,107,0.10)" stroke="#5b7286" stroke-width="1"/>
+        <text class="legend" x="385" y="658">fixture input</text>
+
+        <rect x="486" y="648" width="12" height="12" rx="2" fill="rgba(11,34,51,0.02)" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="4,3"/>
+        <text class="legend" x="506" y="658">unimplemented</text>
+
+        <line x1="607" y1="654" x2="623" y2="654" stroke="#1f4f9c" stroke-width="1.2" marker-end="url(#arrow-link)"/>
+        <text class="legend" x="631" y="658">http call</text>
+
+        <line x1="705" y1="654" x2="721" y2="654" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <text class="legend" x="729" y="658">data flow</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

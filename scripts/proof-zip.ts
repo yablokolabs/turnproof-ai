@@ -32,8 +32,6 @@ const ROOT_FILES = [
   'README.md',
   'AGENTS.md',
   'PROJECT_BUILD.md',
-  'FREEBUFF_PROMPT.md',
-  'SESSION_CONTINUATION.md',
   'turnproof-logo.png',
   'turnproof-icon.png',
 ];
@@ -46,7 +44,10 @@ const EXCLUDED_DIRS = new Set([
   'playwright-report',
 ]);
 const EXCLUDED_NAMES = new Set(['turnproof-proof.zip', 'zip-manifest.json', 'local']);
-const INCLUDED_EXTENSIONS = ['.ts', '.tsx', '.json', '.css', '.html', '.mjs', '.js', '.png', '.md'];
+// The archive carries the demo video and its narration, so the bundle holds the
+// artefact itself and not only the manifest that describes it. Store-only
+// compression keeps it deterministic for the same input bytes.
+const INCLUDED_EXTENSIONS = ['.ts', '.tsx', '.json', '.css', '.html', '.mjs', '.js', '.png', '.svg', '.md', '.mp4', '.mp3'];
 
 function walk(dir: string, out: string[] = []): string[] {
   for (const entry of readdirSync(dir).sort()) {
@@ -201,6 +202,8 @@ const record = {
     packets: ['proof/packets/case-a-packet.json', 'proof/packets/case-b-packet.json', 'proof/packets/case-c-packet.json'],
     evaluation: 'proof/results/evaluation.json',
     screenshots: files.filter((f) => f.name.startsWith('proof/screenshots/')).map((f) => f.name),
+    demo: files.filter((f) => f.name.startsWith('proof/demo/')).map((f) => f.name),
+    diagrams: files.filter((f) => f.name.startsWith('docs/diagrams/')).map((f) => f.name),
   },
 };
 writeFileSync(OUT_RECORD, `${JSON.stringify(record, null, 2)}\n`, 'utf8');

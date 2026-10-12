@@ -1,0 +1,46 @@
+{
+  "note": "Narration script for the demo video, one beat per screen segment. `id` matches the beat ids used by scripts/record-demo.ts, so the recorded segment and the spoken audio can be aligned and padded to the same duration. Every figure spoken here is a fixture-derived or measured figure already stated in README.md.",
+  "rules": [
+    "Say 'synthetic' or 'fixture' whenever a number is shown.",
+    "Say 'projected' for every delay figure; it is arithmetic under fixture assumptions.",
+    "Never describe replay as live, and never present a sponsor as integrated.",
+    "Read the unavailable reason out loud rather than skipping past it."
+  ],
+  "beats": [
+    {
+      "id": "title",
+      "screen": "Title card: wordmark, advisory line",
+      "text": "TurnProof AI. A turnaround recovery assistant that shows its evidence."
+    },
+    {
+      "id": "beat-1",
+      "screen": "Case A board, prototype banner, readiness, the t-fuel row",
+      "text": "This is one station and one disrupted turnaround. Updates arrive as timestamps from different ground services, and they often do not agree. Everything here is synthetic fixture data, and the tool is advisory only. Readiness is projected twenty minutes late, and fueling is the reason. That task has slipped to oh-nine-thirty Zulu."
+    },
+    {
+      "id": "beat-2",
+      "screen": "Dependency timeline",
+      "text": "This timeline is a dependency graph, not a list. Inspection finishes. Fueling slips. Boarding cannot begin until fueling ends, so readiness lands at ten-ten. Baseline and candidate are drawn by the same engine, so neither can quietly assume a friendlier schedule than the other."
+    },
+    {
+      "id": "beat-3",
+      "screen": "Alternatives panel, the rejected unit, the evidence drawer",
+      "text": "Waiting costs twenty projected minutes. An alternate synthetic tanker finishes fueling five minutes late instead, a projected recovery of fifteen minutes under the fixture assumptions. The committed unit is rejected rather than ranked: it is already reserved, and it sits outside its availability window. The evidence drawer shows when each claim was observed and the hash of its content. This claim was observed two minutes before the snapshot, inside the five minute freshness budget."
+    },
+    {
+      "id": "beat-4",
+      "screen": "Review form, then the exported decision packet",
+      "text": "The review record is append-only. It stores a reviewer's preference inside this prototype, and it never authorizes an operational change. The exported packet carries the snapshot hash, the policy and solver versions, the full candidate set with its reason codes, and a provenance block naming the provider mode."
+    },
+    {
+      "id": "beat-5",
+      "screen": "Case C conflict and abstention, then Case B",
+      "text": "Case C holds two fresh updates that contradict each other about the same critical field. The engine applies neither, abstains, and returns needs review. The evidence item carrying the injected instruction stays inert text, because imported content is never treated as an instruction. Case B has no feasible recovery, and the tool says exactly that instead of inventing one."
+    },
+    {
+      "id": "end",
+      "screen": "End card: measured figures, integration status, repository link",
+      "text": "These are measured figures with their denominators: forty-five tests, six browser tests, and thirty-four committed synthetic fixtures. No live model and no sponsor was called. Anakin and Jev are unavailable, and nothing outside loopback was contacted. The next step is the read only shadow pilot proposal. The repository is public and linked below."
+    }
+  ]
+}

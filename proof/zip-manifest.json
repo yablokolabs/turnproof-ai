@@ -1,11 +1,11 @@
 {
   "archive": "proof/turnproof-proof.zip",
-  "sha256": "c134875afdeb0d43fd60f4a2717521df91bb426144f1a0b9bdd557ca7433765b",
-  "bytes": 6385881,
-  "entryCount": 121,
+  "sha256": "59e0f6584da5e2f60fcbb72a67ae90075b9ccf20b569a6439ab08706297cf34b",
+  "bytes": 16140992,
+  "entryCount": 146,
   "compression": "none (store method)",
   "fixedEntryTimestamp": "2026-10-12T00:00:00Z",
-  "documentedAt": "2026-10-12T10:12:04.885Z",
+  "documentedAt": "2026-10-12T11:02:46.324Z",
   "note": "Reproducible archive of the proof bundle. Entry timestamps are fixed so the same working tree produces the same bytes. Rebuilding after any source change changes the hash. This hash detects change; it is not tamper-proof storage.",
   "verification": {
     "command": "python3 -c \"import zipfile; z=zipfile.ZipFile('proof/turnproof-proof.zip'); print(len(z.namelist()), z.testzip())\"",
@@ -23,6 +23,30 @@
       "proof/screenshots/case-a-board.png",
       "proof/screenshots/case-b-no-feasible.png",
       "proof/screenshots/case-c-abstain.png"
+    ],
+    "demo": [
+      "proof/demo/demo-manifest.json",
+      "proof/demo/narration-manifest.json",
+      "proof/demo/narration-timing.json",
+      "proof/demo/narration/beat-1.mp3",
+      "proof/demo/narration/beat-2.mp3",
+      "proof/demo/narration/beat-3.mp3",
+      "proof/demo/narration/beat-4.mp3",
+      "proof/demo/narration/beat-5.mp3",
+      "proof/demo/narration/end.mp3",
+      "proof/demo/narration/title.mp3",
+      "proof/demo/turnproof-demo.mp4"
+    ],
+    "diagrams": [
+      "docs/diagrams/architecture.html",
+      "docs/diagrams/architecture.png",
+      "docs/diagrams/architecture.svg",
+      "docs/diagrams/decision-flow.html",
+      "docs/diagrams/decision-flow.png",
+      "docs/diagrams/decision-flow.svg",
+      "docs/diagrams/review-sequence.html",
+      "docs/diagrams/review-sequence.png",
+      "docs/diagrams/review-sequence.svg"
     ]
   }
 }

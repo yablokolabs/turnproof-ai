@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurnProof AI review round trip</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #f5f7fa; min-height: 100vh; display: flex; align-items: center;
+           justify-content: center; padding: 2rem; }
+    .frame { max-width: 1280px; width: 100%; }
+    .diagram-container { width: 100%; overflow-x: auto; }
+    svg { width: 100%; min-width: 1280px; display: block; }
+    @media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="diagram-container">
+      <svg viewBox="0 0 1280 760" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-labelledby="seq-title seq-desc">
+        <title id="seq-title">TurnProof AI review round trip</title>
+        <desc id="seq-desc">One scenario selected, decided by the domain engine, stored in one transaction, reviewed by the coordinator, and returned as a decision packet. Time flows top to bottom.</desc>
+        <defs>
+          <style>
+            .eyebrow { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; font-weight: 500; letter-spacing: 0.14em; fill: #5b7286; }
+            .title   { font-family: 'Instrument Serif', 'Noto Serif', Georgia, serif; font-size: 22px; fill: #0b2233; }
+            .actor   { font-family: 'Geist', system-ui, sans-serif; font-size: 12px; font-weight: 600; fill: #0b2233; }
+            .arole   { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+            .lbl     { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.06em; fill: #40566b; }
+            .legend  { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+          </style>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#40566b"/></marker>
+          <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0b6f8f"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f7fa"/>
+
+        <text class="eyebrow" x="48" y="50">REVIEW ROUND TRIP · TURNPROOF AI</text>
+        <text class="title" x="48" y="82">One scenario, one decision, one stored review</text>
+
+        <!-- Lifelines -->
+        <line x1="160" y1="148" x2="160" y2="670" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="400" y1="148" x2="400" y2="670" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="640" y1="148" x2="640" y2="670" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="880" y1="148" x2="880" y2="670" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="3,3"/>
+        <line x1="1120" y1="148" x2="1120" y2="670" stroke="rgba(11,34,51,0.20)" stroke-width="1" stroke-dasharray="3,3"/>
+
+        <!-- Activation bars -->
+        <rect x="156" y="196" width="8" height="16" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="156" y="518" width="8" height="16" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="396" y="196" width="8" height="56" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="396" y="426" width="8" height="154" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="636" y="242" width="8" height="148" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="636" y="426" width="8" height="194" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="876" y="288" width="8" height="56" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+        <rect x="1116" y="472" width="8" height="18" fill="rgba(11,34,51,0.06)" stroke="#40566b" stroke-width="0.8"/>
+
+        <!-- Messages and label masks -->
+        <path d="M 160,200 H 400" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="216" y="182" width="128" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="280" y="191" text-anchor="middle">select scenario case-a</text>
+
+        <path d="M 400,246 H 640" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="421" y="228" width="198" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="520" y="237" text-anchor="middle">GET /api/scenarios/case-a/snapshot</text>
+
+        <path d="M 640,292 H 880" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="690" y="274" width="139" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="760" y="283" text-anchor="middle">decide(scenario, policy)</text>
+
+        <path d="M 880,338 H 640" fill="none" stroke="#40566b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+        <rect x="671" y="320" width="177" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="760" y="329" text-anchor="middle">baseline + candidates + decision</text>
+
+        <path d="M 640,384 H 400" fill="none" stroke="#40566b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+        <rect x="480" y="366" width="79" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="520" y="375" text-anchor="middle">snapshot view</text>
+
+        <path d="M 400,430 H 640" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="464" y="412" width="111" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="520" y="421" text-anchor="middle">POST /api/decisions</text>
+
+        <path d="M 640,476 H 1120" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="778" y="458" width="204" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="880" y="467" text-anchor="middle">one transaction: snapshot + decision</text>
+
+        <path d="M 160,522 H 400" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="221" y="504" width="117" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="280" y="513" text-anchor="middle">accept, with a note</text>
+
+        <path d="M 400,568 H 640" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="480" y="550" width="79" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="520" y="559" text-anchor="middle">POST /reviews</text>
+
+        <path d="M 640,614 H 400" fill="none" stroke="#0b6f8f" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+        <rect x="448" y="596" width="144" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="520" y="605" text-anchor="middle">review + decision packet</text>
+
+        <!-- Actors -->
+        <rect x="80" y="100" width="160" height="48" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="actor" x="160" y="122" text-anchor="middle">Coordinator</text>
+        <text class="arole" x="160" y="137" text-anchor="middle">human in the loop</text>
+
+        <rect x="320" y="100" width="160" height="48" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="actor" x="400" y="122" text-anchor="middle">Console</text>
+        <text class="arole" x="400" y="137" text-anchor="middle">React + Vite</text>
+
+        <rect x="560" y="100" width="160" height="48" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="actor" x="640" y="122" text-anchor="middle">Fastify API</text>
+        <text class="arole" x="640" y="137" text-anchor="middle">loopback :5175</text>
+
+        <rect x="800" y="100" width="160" height="48" rx="6" fill="rgba(11,111,143,0.08)" stroke="#0b6f8f" stroke-width="1.2"/>
+        <text class="actor" x="880" y="122" text-anchor="middle">domain engine</text>
+        <text class="arole" x="880" y="137" text-anchor="middle">packages/domain</text>
+
+        <rect x="1040" y="100" width="160" height="48" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="actor" x="1120" y="122" text-anchor="middle">SQLite</text>
+        <text class="arole" x="1120" y="137" text-anchor="middle">node:sqlite</text>
+
+        <!-- Legend -->
+        <line x1="48" y1="690" x2="1232" y2="690" stroke="rgba(11,34,51,0.12)" stroke-width="1"/>
+        <line x1="48" y1="706" x2="64" y2="706" stroke="#40566b" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <text class="legend" x="72" y="710">call</text>
+        <line x1="130" y1="706" x2="146" y2="706" stroke="#40566b" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+        <text class="legend" x="154" y="710">return</text>
+        <line x1="220" y1="706" x2="236" y2="706" stroke="#0b6f8f" stroke-width="1.4" marker-end="url(#arrow-accent)"/>
+        <text class="legend" x="244" y="710">headline success</text>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

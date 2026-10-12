@@ -32,10 +32,9 @@ const ROOT_FILES = [
   'README.md',
   'AGENTS.md',
   'PROJECT_BUILD.md',
-  'SESSION_CONTINUATION.md',
 ];
 const EXCLUDED_DIRS = new Set(['node_modules', 'dist', '.git', 'data', 'proof', 'test-results', 'playwright-report']);
-const INCLUDED_EXTENSIONS = ['.ts', '.tsx', '.json', '.css', '.html', '.mjs', '.js', '.png', '.md'];
+const INCLUDED_EXTENSIONS = ['.ts', '.tsx', '.json', '.css', '.html', '.mjs', '.js', '.png', '.svg', '.md'];
 
 function sha256(path: string): string {
   return createHash('sha256').update(readFileSync(path)).digest('hex');
@@ -191,6 +190,7 @@ async function main(): Promise<void> {
       'Synthetic fixtures only; no airport, airline or sponsor system was contacted.',
       'Deterministic rule-based mode. Live AI extraction and live ranking are unimplemented.',
       'Anakin and Jev adapters are unavailable; no sponsor call was made.',
+      'The demo video and its narration are generated artefacts outside this artefact list; their own manifests, proof/demo/demo-manifest.json and proof/demo/narration-manifest.json, carry their hashes. The narration step is the only one that contacts a third party.',
       'A hash detects byte changes. It does not establish source truth or tamper-resistant storage.',
     ],
   };

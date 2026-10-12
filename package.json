@@ -27,6 +27,11 @@
     "evaluate": "tsx scripts/evaluate.ts",
     "proof:export": "tsx scripts/proof-export.ts",
     "proof:zip": "tsx scripts/proof-zip.ts",
+    "demo:video": "tsx scripts/record-demo.ts",
+    "demo:narrate": "tsx scripts/narrate-demo.ts",
+    "demo:assemble": "tsx scripts/assemble-demo.ts",
+    "diagrams:build": "tsx scripts/build-diagrams.ts",
+    "diagrams:check": "tsx scripts/check-diagrams.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "devDependencies": {

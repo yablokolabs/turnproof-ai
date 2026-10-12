@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1280 1000" xmlns="http://www.w3.org/2000/svg" role="img"
+           aria-labelledby="flow-title flow-desc" id="decision-flow-root">
+        <title id="flow-title">TurnProof AI decision flow</title>
+        <desc id="flow-desc">The path from timestamped updates to a stored decision: contradiction abstains, hard constraints gate every candidate, and a candidate set with nothing feasible yields no_feasible_option rather than an invented recovery.</desc>
+        <defs>
+      <style>#decision-flow-root .diagram-container { width: 100%; overflow-x: auto; }
+      #decision-flow-root .diagram-container { overflow-x: visible; }
+      #decision-flow-root .title { font-family: 'Instrument Serif', 'Noto Serif', Georgia, serif; font-size: 22px; fill: #0b2233; }
+      #decision-flow-root .name { font-family: 'Geist', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #0b2233; }
+      #decision-flow-root .sub { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+      #decision-flow-root .lbl { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.06em; fill: #40566b; }
+      #decision-flow-root .dtxt { font-family: 'Geist', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #0b2233; }</style>
+          <style>
+            .eyebrow { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; font-weight: 500; letter-spacing: 0.14em; fill: #5b7286; }
+            .title   { font-family: 'Instrument Serif', 'Noto Serif', Georgia, serif; font-size: 22px; fill: #0b2233; }
+            .name    { font-family: 'Geist', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; fill: #0b2233; }
+            .sub     { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #40566b; }
+            .lbl     { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: 0.06em; fill: #40566b; }
+            .dtxt    { font-family: 'Geist', system-ui, sans-serif; font-size: 11px; font-weight: 600; fill: #0b2233; }
+          </style>
+          <marker id="decision-flow-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#40566b"/></marker>
+          <marker id="decision-flow-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#0b6f8f"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f7fa"/>
+
+        <text class="eyebrow" x="48" y="50">DECISION FLOW · TURNPROOF AI</text>
+        <text class="title" x="48" y="82">Feasibility is decided before anything is ranked</text>
+
+        <!-- Arrows and label masks, before the nodes -->
+        <path d="M 440,154 V 190" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <path d="M 440,246 V 280" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+
+        <path d="M 580,330 H 700" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="618" y="312" width="44" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="640" y="321" text-anchor="middle">YES</text>
+
+        <path d="M 440,380 V 430" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="448" y="399" width="44" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="470" y="408" text-anchor="middle">NO</text>
+
+        <path d="M 440,486 V 520" fill="none" stroke="#0b6f8f" stroke-width="1.2" marker-end="url(#decision-flow-arrow-accent)"/>
+
+        <path d="M 580,570 H 700" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="616" y="552" width="50" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="641" y="561" text-anchor="middle">FAILS</text>
+
+        <path d="M 440,620 V 650" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="448" y="629" width="44" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="470" y="638" text-anchor="middle">PASS</text>
+
+        <path d="M 580,700 H 700" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="616" y="682" width="44" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="638" y="691" text-anchor="middle">NONE</text>
+
+        <path d="M 440,750 V 800" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+        <rect x="448" y="769" width="76" height="12" rx="2" fill="#f5f7fa"/>
+        <text class="lbl" x="486" y="778" text-anchor="middle">ONE OR MORE</text>
+
+        <path d="M 440,856 V 890" fill="none" stroke="#40566b" stroke-width="1.2" marker-end="url(#decision-flow-arrow)"/>
+
+        <!-- Nodes -->
+        <rect x="260" y="110" width="360" height="44" rx="20" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="440" y="138" text-anchor="middle">timestamped synthetic updates</text>
+
+        <rect x="260" y="190" width="360" height="56" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="name" x="276" y="214">normalize + snapshot</text>
+        <text class="sub" x="276" y="233">apply in revision order · hash the input</text>
+
+        <polygon points="440,280 580,330 440,380 300,330" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="dtxt" x="440" y="326" text-anchor="middle">contradictory</text>
+        <text class="dtxt" x="440" y="342" text-anchor="middle">fresh critical claim?</text>
+
+        <rect x="700" y="302" width="380" height="56" rx="6" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="716" y="326">abstain: needs_review</text>
+        <text class="sub" x="716" y="345">neither claim is applied</text>
+
+        <rect x="260" y="430" width="360" height="56" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="name" x="276" y="454">baseline + candidate set</text>
+        <text class="sub" x="276" y="473">wait, and the alternate resource</text>
+
+        <polygon points="440,520 580,570 440,620 300,570" fill="#0b6f8f" fill-opacity="0.08" stroke="#0b6f8f" stroke-width="1.2"/>
+        <text class="dtxt" x="440" y="566" text-anchor="middle">every hard</text>
+        <text class="dtxt" x="440" y="582" text-anchor="middle">constraint passes?</text>
+
+        <rect x="700" y="542" width="380" height="56" rx="6" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="716" y="566">rejected, with reason codes</text>
+        <text class="sub" x="716" y="585">RESOURCE_RESERVED · STALE_EVIDENCE</text>
+
+        <polygon points="440,650 580,700 440,750 300,700" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="dtxt" x="440" y="696" text-anchor="middle">any feasible</text>
+        <text class="dtxt" x="440" y="712" text-anchor="middle">candidate left?</text>
+
+        <rect x="700" y="672" width="380" height="56" rx="6" fill="#40566b" fill-opacity="0.10" stroke="#5b7286" stroke-width="1"/>
+        <text class="name" x="716" y="696">no_feasible_option</text>
+        <text class="sub" x="716" y="715">no recovery is invented</text>
+
+        <rect x="260" y="800" width="360" height="56" rx="6" fill="#ffffff" stroke="#0b2233" stroke-width="1"/>
+        <text class="name" x="276" y="824">recommended / needs_review</text>
+        <text class="sub" x="276" y="843">only feasible candidates are ranked</text>
+
+        <rect x="260" y="890" width="360" height="56" rx="6" fill="#0b2233" fill-opacity="0.05" stroke="#40566b" stroke-width="1"/>
+        <text class="name" x="276" y="914">human review + decision packet</text>
+        <text class="sub" x="276" y="933">append-only record of the run</text>
+      </svg>
