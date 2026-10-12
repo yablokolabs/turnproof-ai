@@ -1,15 +1,15 @@
 {
   "manifestVersion": "1.0.0",
-  "capturedAt": "2026-10-12T11:44:00.014Z",
+  "capturedAt": "2026-10-12T12:42:11.563Z",
   "capturedAtNote": "Capture timestamp is when this command ran. It is not an evidence-lock timestamp.",
-  "commit": "7e27a46cab7762cbfe6afb4921d91f1a46cf635e",
+  "commit": "3d927bc66f9a10c8afab8886a24e45f0d1360cd8",
   "workingTreeDirty": true,
   "environment": {
     "node": "v22.23.2",
     "platform": "linux x64",
     "packageManager": "npm workspaces"
   },
-  "bundleHash": "13807bf16812bce047ba615d3fff9de909cfe0cdb2b0c718c7431505a562407d",
+  "bundleHash": "1b2ca3f34d04ac15b5e92df23249aebe07c95f479ed087dc08a4c70b82c1cd51",
   "bundleHashMethod": "sha256 of the sorted \"path:sha256\" lines below",
   "counts": {
     "artefacts": 125,
@@ -52,21 +52,21 @@
       "path": "proof/packets/case-a-packet.json",
       "scenarioId": "case-a",
       "decisionState": "recommended",
-      "hash": "e5b25a5f1688893b7d4b18e1070f21abd5627a3f94751f12ee3e4ca735e559bd"
+      "hash": "bb86fadd2a334a00010ff44c82d7f651a534f0fe7ce78fb22b93227b0b4849e2"
     },
     {
       "name": "case-b-packet.json",
       "path": "proof/packets/case-b-packet.json",
       "scenarioId": "case-b",
       "decisionState": "no_feasible_option",
-      "hash": "fd6abb13693f727d84433fa789cc5117a7fcba02981ba6962d771f5e89e1fdf1"
+      "hash": "679217aa614b503a225fbb50cdd5bed6ff6d8325fe11d9c3c23282c82c2e3153"
     },
     {
       "name": "case-c-packet.json",
       "path": "proof/packets/case-c-packet.json",
       "scenarioId": "case-c",
       "decisionState": "needs_review",
-      "hash": "92091045281db4e1d77ed16a5e69e44a69fd0a4e646a7c479f2cdcbc7c3448c2"
+      "hash": "f164e5b071a62d67e210fd3d521ccd12fb52c483546f1c7b835d72b3420ef0a8"
     }
   ],
   "artefacts": [
@@ -277,8 +277,8 @@
     },
     {
       "path": "docs/PROGRESS.md",
-      "bytes": 26531,
-      "sha256": "3119bf01e2a72d883729bd78ad64888a90908e108061e675a27f5d50dc9877e3"
+      "bytes": 26605,
+      "sha256": "ff114f20fd2d45841d13ceb97e1b71bf2474580b9f827225780ffa8b1e00bd33"
     },
     {
       "path": "docs/demo-narration.json",
@@ -517,8 +517,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 1620,
-      "sha256": "6af46b8107aa648c8124ca53f2f4863d5b70739fa423ee4e6d1a7e17ae54e0f6"
+      "bytes": 1567,
+      "sha256": "d185409d33144febb9018e314f737520e84ea4c7275120851abe79ede7dc77d3"
     },
     {
       "path": "packages/adapters/package.json",

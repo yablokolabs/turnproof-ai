@@ -199,6 +199,6 @@ Timestamp: 2026-10-12, UTC.
 
 Corrections to earlier checkpoints: C9 records diagram sizes 2560x1440 and 2560x1520 for the architecture and review diagrams; those are superseded by the sizes above. `README.md` no longer calls the committed MP4 unrecorded or silent, and `docs/DEMO.md` no longer lists a corner watermark.
 
-Open item: `package.json` has a `demo:assemble` script that points to `scripts/assemble-demo.ts`, which does not exist. Not changed here.
+Removed the `demo:assemble` entry from `package.json`. It pointed to `scripts/assemble-demo.ts`, which was never committed; `npm run demo:video` does the assembly. `npm run` no longer lists a command that fails.
 
 One exact next action: review and merge the `remove-demo-watermark` pull request.
