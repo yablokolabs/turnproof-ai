@@ -5,8 +5,8 @@
  * screen. The walkthrough is captured as **one segment per narration beat**, so
  * each segment can be held to exactly the length of the sentence spoken over it
  * and the picture and the voice line up beat for beat. ffmpeg then assembles a
- * title card, the segments with the wordmark as a corner watermark, and an end
- * card, and muxes the narration built by `npm run demo:narrate`.
+ * title card, the segments and an end card, and muxes the narration built by
+ * `npm run demo:narrate`.
  *
  * Two modes, chosen by whether `proof/demo/narration-timing.json` exists:
  *  - narrated  - segments are timed to each beat's audio and the MP3s are muxed in
@@ -299,17 +299,7 @@ async function main(): Promise<void> {
     await waitForServer();
 
     const browser = await chromium.launch({ headless: true });
-    const watermarkPng = join(WORK_DIR, 'watermark.png');
     const encode = ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '22', '-pix_fmt', 'yuv420p', '-r', String(FPS)];
-
-    // A light plate behind the watermark, so the dark wordmark stays legible
-    // over the dark console.
-    ffmpeg(
-      '-f', 'lavfi', '-i', `color=c=0xf5f7fa:s=300x120:d=1:r=${FPS}`,
-      '-i', LOGO_PATH,
-      '-filter_complex', '[1:v]scale=270:-1[lg];[0:v][lg]overlay=(W-w)/2:(H-h)/2,format=rgba',
-      '-frames:v', '1', watermarkPng,
-    );
 
     const segments: Array<{ path: string; seconds: number; label: string }> = [];
     const audioParts: string[] = [];
@@ -345,10 +335,8 @@ async function main(): Promise<void> {
       // held to its narration length before closing, so no content is cut.
       ffmpeg(
         '-i', raw,
-        '-i', watermarkPng,
-        '-filter_complex',
-        '[0:v]scale=1280:720,setsar=1,fps=25[bg];[1:v]format=rgba[wm];[bg][wm]overlay=24:H-h-24,format=yuv420p[v]',
-        '-map', '[v]', '-an', '-t', (targetMs / 1000).toFixed(3), ...encode, out,
+        '-vf', 'scale=1280:720,setsar=1,fps=25',
+        '-an', '-t', (targetMs / 1000).toFixed(3), ...encode, out,
       );
       segments.push({ path: out, seconds: targetMs / 1000, label: beat.id });
       console.log(`  ${beat.id}: ${(targetMs / 1000).toFixed(2)}s -> ${durationOf(out).toFixed(2)}s`);
@@ -476,7 +464,7 @@ async function main(): Promise<void> {
         mp4: sha256(finalPath),
       },
       brandAssetsUsed: {
-        wordmark: 'turnproof-logo.png (title card, corner watermark, end card)',
+        wordmark: 'turnproof-logo.png (title card, end card)',
         icon: 'turnproof-icon.png (served by the app, available for the social preview)',
         note: 'The wordmark is dark ink on transparency, so it is always placed on a light plate.',
       },
